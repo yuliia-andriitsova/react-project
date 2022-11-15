@@ -1,0 +1,29 @@
+@import '../../sass/mixin';
+@import '../../sass/vars';
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+}
+
+.Modal {
+  width: 672px;
+  height: 573px;
+  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.ModalTitle {
+  @include comp {
+    @include font(700, 26, 1.23, 0, #212121);
+  }
+}
