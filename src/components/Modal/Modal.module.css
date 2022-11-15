@@ -1,0 +1,68 @@
+/* @import '../../sass/mixin';
+@import '../../sass/vars'; */
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(33, 33, 33, 0.12);
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.Modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  z-index: 2;
+  width: 672px;
+  height: 573px;
+  text-align: center;
+  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1), 0px 2px 4px rgba(0, 0, 0, 0.1),
+    0px 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+
+.ModalCloseIcon {
+  background-color: inherit;
+  border: none;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+}
+
+.ModalCloseIcon:hover,
+.ModalCloseIcon:focus {
+  background-color: #fc842d;
+  border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ModalTitle {
+  margin-top: 64px;
+  width: 380px;
+  word-wrap: break-word;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.23;
+  @include comp {
+    @include font(700, 26, 1.23, 0, #212121);
+  }
+}
+
+.ModalNumberCalories {
+  margin-top: 20px;
+}
+
+.ModalLine {
+  margin-top: 32px;
+  outline: 1 px solid gray;
+  width: 330px;
+}
