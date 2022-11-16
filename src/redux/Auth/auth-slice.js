@@ -8,7 +8,7 @@ import {
 
 const initialState = {
   user: null,
-  id: null,
+  sid: null,
   accessToken: null,
   refreshToken: null,
   status: StatusForAll.init,
@@ -23,14 +23,14 @@ const authSlice = createSlice({
     [loginUserOperation.fulfilled](state, action) {
       state.status = StatusForAll.success;
       state.user = action.payload.user;
-      state.id = action.payload.sid;
+      state.sid = action.payload.sid;
       state.accessToken = action.payload.accessToken;
       state.refreshToken = action.payload.refreshToken;
     },
     [loginUserOperation.rejected](state) {
       state.status = StatusForAll.error;
       state.user = null;
-      state.id = null;
+      state.sid = null;
       state.accessToken = null;
       state.refreshToken = null;
     },
@@ -48,7 +48,13 @@ const authSlice = createSlice({
     },
     [refreshOperation.fulfilled](state, action) {
       state.status = StatusForAll.success;
-      state.id = action.payload;
+      state.sid = action.payload.sid;
+
+      state.accessToken = action.payload.newAccessToken;
+      state.refreshToken = action.payload.newRefreshToken;
+
+      // state.accessToken = newAccessToken;
+      // state.refreshToken = null;
     },
     [refreshOperation.rejected](state) {
       state.status = StatusForAll.error;

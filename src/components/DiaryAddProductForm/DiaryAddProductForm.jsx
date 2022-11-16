@@ -1,19 +1,22 @@
 import React from 'react';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { setProductsData } from 'redux/Daily-rate/daile-rate-operations';
+import { setProductsData } from 'redux/Product-search/product-search-operations';
 import css from './DairyAddProductForm.module.css';
 
 export default function DairyAddProductForm() {
   const dispatch = useDispatch();
   const [product, setProduct] = useState('');
   const [grams, setGrams] = useState('');
+  // const [grams, setGrams] = useState('');
 
   //   const products = useSelector(state => state.products.items);
 
   const handleAddProduct = e => {
     e.preventDefault();
-    dispatch(setProductsData({ product, grams }));
+    dispatch(
+      setProductsData({ productId: product, weight: grams, date: '2020-12-31' })
+    );
     setProduct('');
     setGrams('');
   };

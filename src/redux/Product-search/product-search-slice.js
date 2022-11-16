@@ -1,6 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { deleteProductsData, setProductsData } from './daile-rate-operations';
-import { getProductsData } from './day-operations';
+
+import {
+  deleteProductsData,
+  getProductsData,
+  setProductsData,
+} from './product-search-operations';
 
 const Status = {
   init: 'INIT',
@@ -13,6 +17,7 @@ const initialState = {
   isLoading: false,
   error: null,
   status: Status.init,
+  // accessToken: ,
 };
 export const productSearchSlice = createSlice({
   name: 'products',
@@ -24,10 +29,12 @@ export const productSearchSlice = createSlice({
       })
       .addCase(getProductsData.fulfilled, (state, action) => {
         state.status = Status.success;
-        state.items = action.payload;
+        state.items = [...action.payload];
+        state.accessToken = action.payload.accessToken;
       })
-      .addCase(getProductsData.rejected, state => {
+      .addCase(getProductsData.rejected, (state, action) => {
         state.status = Status.error;
+        state.accessToken = action.payload.accessToken;
       })
       .addCase(setProductsData.pending, state => {
         state.status = Status.loading;
@@ -38,6 +45,7 @@ export const productSearchSlice = createSlice({
       })
       .addCase(setProductsData.rejected, state => {
         state.status = Status.error;
+        console.log(state.accessToken);
       })
       .addCase(deleteProductsData.pending, state => {
         state.status = Status.loading;

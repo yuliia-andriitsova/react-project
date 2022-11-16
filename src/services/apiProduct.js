@@ -1,15 +1,16 @@
 import axios from 'axios';
 axios.defaults.baseURL = 'https://slimmom-backend.goit.global';
 
-export const getProduct = async search => {
-  const { data } = await axios.get('/product', { params: { q: search } });
+export const getProduct = async query => {
+  const { data } = await axios.get(`/product?query=${query}`);
   console.log('data', data);
   return data;
 };
 
 export const addProduct = async product => {
   const { data } = await axios.post('/day', product);
-  return data;
+  console.log('data', data);
+  return data.accessToken;
 };
 
 export const getDayProduct = async () => {
@@ -17,6 +18,6 @@ export const getDayProduct = async () => {
   return data;
 };
 export const deleteDayProduct = async id => {
-  const { data } = await axios.get(`/day/${id}`);
+  const { data } = await axios.delete(`/day/${id}`);
   return data;
 };
