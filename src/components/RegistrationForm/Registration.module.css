@@ -1,0 +1,27 @@
+.registrTitle {
+  font-family: var(----primary-font);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 0.9;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--orange);
+}
+
+.label {
+  font-family: var(--secondary-font);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.21;
+  letter-spacing: 0.04em;
+  color: var(--text-gray);
+}
+
+.input {
+  width: 240px;
+  height: 20px;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 1px solid var(--decoration-gray);
+}

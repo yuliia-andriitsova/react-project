@@ -1,0 +1,30 @@
+.navigation {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  border-left: 2px solid #E0E0E0;
+  padding-left: 20px;
+  margin-left: 20px;
+}
+
+.navlink {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 0.92;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.first {
+  composes: navlink;
+  color: #212121;
+  margin-right: 16px;
+}
+
+.second {
+  composes: navlink;
+  color: #9B9FAA;;
+}

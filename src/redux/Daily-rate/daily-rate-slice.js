@@ -1,55 +1,33 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { deleteProductsData, setProductsData } from './daile-rate-operations';
-import { getProductsData } from './day-operations';
 
-const Status = {
-  init: 'INIT',
-  loading: 'LOADING',
-  success: 'SUCCESS',
-  error: 'ERROR',
-};
-const initialState = {
-  items: [],
+import { fetchDailyRate } from './daily-rate-operations';
+
+export const dailylState = {
   isLoading: false,
   error: null,
-  status: Status.init,
+  dailyRate: null,
+  notAllowedProducts: [],
 };
-export const dailyRateSlice = createSlice({
-  name: 'products',
-  initialState,
-  extraReducers: builder => {
-    builder
-      .addCase(getProductsData.pending, state => {
-        state.status = Status.loading;
-      })
-      .addCase(getProductsData.fulfilled, (state, action) => {
-        state.status = Status.success;
-        state.items = action.payload;
-      })
-      .addCase(getProductsData.rejected, state => {
-        state.status = Status.error;
-      })
-      .addCase(setProductsData.pending, state => {
-        state.status = Status.loading;
-      })
-      .addCase(setProductsData.fulfilled, (state, action) => {
-        state.status = Status.success;
-        state.items = [...action.payload];
-      })
-      .addCase(setProductsData.rejected, state => {
-        state.status = Status.error;
-      })
-      .addCase(deleteProductsData.pending, state => {
-        state.status = Status.loading;
-      })
-      .addCase(deleteProductsData.fulfilled, (state, action) => {
-        state.status = Status.success;
-        state.items = [...action.payload];
-      })
-      .addCase(deleteProductsData.rejected, state => {
-        state.status = Status.error;
-      });
+
+const dailyRateSlice = createSlice({
+  name: 'daily',
+  initialState: dailylState,
+  extraReducers: {
+    [fetchDailyRate.pending](state) {
+      state.isLoading = true;
+    },
+    [fetchDailyRate.fulfilled](state, action) {
+      state.isLoading = false;
+      state.dailyRate = action.payload.dailyRate;
+      state.notAllowedProducts = action.payload.notAllowedProducts;
+    },
+
+    [fetchDailyRate.rejected](state, action) {
+      state.isLoading = false;
+      state.error = action.payload;
+    },
   },
 });
 
-export default dailyRateSlice.reducer;
+export const dailyRateReducer = dailyRateSlice.reducer;
+
