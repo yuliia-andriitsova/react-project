@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import { fetchDailyRate } from 'redux/Daily-rate/daily-rate-operations';
 import {
   selectDailyRate,
   selectNotAllowedProducts,
 } from 'redux/Daily-rate/daily-rate-selectors';
 import css from './Modal.module.css';
+
 const modalWindow = document.querySelector('#modal-root');
 
 export default function Modal({ onClose }) {
@@ -64,7 +66,9 @@ export default function Modal({ onClose }) {
             <li key={product}>{product}</li>
           ))}
         </ol>
-        <button type="button">Start losing weight</button>
+        <NavLink to="/registration" className={css.startLosingBtn}>
+          Start losing weight
+        </NavLink>
       </div>
     </div>,
     modalWindow
