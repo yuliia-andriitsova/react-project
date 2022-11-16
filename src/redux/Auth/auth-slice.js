@@ -1,52 +1,60 @@
-const { createSlice } = require('@reduxjs/toolkit');
-const { StatusForAll } = require('redux/Status');
-const {
-  registrUserOperation,
+import { createSlice } from '@reduxjs/toolkit';
+import { StatusForAll } from 'redux/Status';
+import {
   loginUserOperation,
-} = require('./auth-operations');
+  logoutUserOperation,
+  refreshOperation,
+} from './auth-operations';
 
 const initialState = {
-  email: null,
-  username: null,
-  id: '',
-  token: null,
+  user: null,
+  id: null,
+  accessToken: null,
+  refreshToken: null,
   status: StatusForAll.init,
 };
 const authSlice = createSlice({
   name: 'auth',
   initialState,
   extraReducers: {
-    [registrUserOperation.pending](state) {
-      state.status = StatusForAll.loading;
-    },
-    [registrUserOperation.fulfilled](state, action) {
-      state.status = StatusForAll.success;
-      state.username = action.payload.username;
-      state.email = action.payload.email;
-      state.token = action.payload.token;
-      state.id = action.payload.id;
-    },
-    [registrUserOperation.rejected](state) {
-      state.status = StatusForAll.error;
-      state.username = null;
-      state.email = null;
-      state.token = null;
-      state.id = null;
-    },
     [loginUserOperation.pending](state) {
       state.status = StatusForAll.loading;
     },
     [loginUserOperation.fulfilled](state, action) {
-      state.username = action.payload.username;
-      state.email = action.payload.email;
-      state.token = action.payload.token;
-      state.id = action.payload.id;
+      state.status = StatusForAll.success;
+      state.user = action.payload.user;
+      state.id = action.payload.sid;
+      state.accessToken = action.payload.accessToken;
+      state.refreshToken = action.payload.refreshToken;
     },
     [loginUserOperation.rejected](state) {
+      state.status = StatusForAll.error;
+      state.user = null;
+      state.id = null;
+      state.accessToken = null;
+      state.refreshToken = null;
+    },
+    [logoutUserOperation.pending](state) {
+      state.status = StatusForAll.loading;
+    },
+    [logoutUserOperation.fulfilled]() {
+      return initialState;
+    },
+    [logoutUserOperation.rejected](state) {
+      state.status = StatusForAll.error;
+    },
+    [refreshOperation.pending](state) {
+      state.status = StatusForAll.loading;
+    },
+    [refreshOperation.fulfilled](state, action) {
+      state.status = StatusForAll.success;
+      state.id = action.payload;
+    },
+    [refreshOperation.rejected](state) {
+      state.status = StatusForAll.error;
       state.username = null;
       state.email = null;
       state.token = null;
-      state.id = null;
     },
   },
 });
