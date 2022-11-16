@@ -35,7 +35,7 @@
   line-height: 1.21;
   letter-spacing: 0.04em;
 
-  color: #9b9faa;
+  color: #9B9FAA;
 }
 
 .input {
@@ -71,8 +71,52 @@ input:focus:invalid {
   line-height: 1.21;
   letter-spacing: 0.04em;
 
-  color: #9b9faa;
+  color: #9B9FAA;
 
   margin-left: 4px;
   margin-right: 28px;
+
 }
+
+.radio:hover,
+.radio:focus {
+  color: #FC842D;
+}
+
+.inputRadio {
+  position: relative;
+  height: 12px;
+  width: 20px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+}
+
+.inputRadio::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px solid #E0E0E0;
+
+}
+
+.inputRadio:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #FC842D;
+  transform: translate(-50%, -50%);
+  visibility: visible;
+}
+

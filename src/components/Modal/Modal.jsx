@@ -12,8 +12,10 @@ import css from './Modal.module.css';
 const modalWindow = document.querySelector('#modal-root');
 
 export default function Modal({ onClose }) {
+
   const dailyRate = useSelector(selectDailyRate);
   const notAllowedProducts = useSelector(selectNotAllowedProducts);
+
 
   useEffect(() => {
     window.addEventListener('keydown', handleKeyDown);
