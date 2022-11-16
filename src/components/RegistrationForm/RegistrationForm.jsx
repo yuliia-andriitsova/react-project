@@ -1,4 +1,5 @@
 import { useDispatch } from 'react-redux';
+import { registrUser } from 'redux/Auth/auth-operations';
 
 
 const RegistrationForm = () => {
@@ -8,7 +9,7 @@ const RegistrationForm = () => {
     event.preventDefault();
     const form = event.currentTarget;
     dispatch(
-      register({
+      registrUser({
         username: form.elements.name.value,
         email: form.elements.email.value,
         password: form.elements.password.value,
