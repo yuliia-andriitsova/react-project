@@ -4,6 +4,7 @@ import css from './DailyCaloriesForm.module.css';
 
 export default function DailyCaloriesForm() {
   const [modalState, setModalState] = useState(false);
+
   return (
     <div className={css.DailyCaloriesForm}>
       <h2 className={css.title}>
@@ -50,15 +51,33 @@ export default function DailyCaloriesForm() {
             <label htmlFor="bloodGroupChoice1" className={css.radio}>
               1
             </label>
-            <input type="radio" id="bloodGroupChoice2" name="blood" value="2" />
+            <input
+              type="radio"
+              id="bloodGroupChoice2"
+              name="blood"
+              value="2"
+              className={css.inputRadio}
+            />
             <label htmlFor="bloodGroupChoice2" className={css.radio}>
               2
             </label>
-            <input type="radio" id="bloodGroupChoice3" name="blood" value="3" />
+            <input
+              type="radio"
+              id="bloodGroupChoice3"
+              name="blood"
+              value="3"
+              className={css.inputRadio}
+            />
             <label htmlFor="bloodGroupChoice3" className={css.radio}>
               3
             </label>
-            <input type="radio" id="bloodGroupChoice4" name="blood" value="4" />
+            <input
+              type="radio"
+              id="bloodGroupChoice4"
+              name="blood"
+              value="4"
+              className={css.inputRadio}
+            />
             <label htmlFor="bloodGroupChoice4" className={css.radio}>
               4
             </label>
