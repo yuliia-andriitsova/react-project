@@ -1,2 +1,5 @@
-@import '../../sass/mixin';
-@import '../../sass/vars';
+@import '../../sass/_mixin.scss';
+
+.header {
+  display: flex; 
+}
