@@ -1,0 +1,48 @@
+.form {
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+ 
+    margin: auto;
+    margin-top: 30px;
+    gap: 48px;
+}
+
+.label {
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+        
+    
+}
+
+.productInput {
+    width: 240px;
+   
+    margin: auto;
+    border: none;
+    border-bottom: 4px solid red;
+    padding-bottom: 20px;
+    text-align: left;
+}
+.gramsInput{
+    width: 107px;
+       
+    margin: auto;
+    border: none;
+    border-bottom: 4px solid red;
+    padding-bottom: 20px;
+    text-align: right;
+    }
+
+
+.btn {
+    /* margin: auto; */
+    /* font-size: 15px; */
+    border: 1px solid green;
+    color: var(orange);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+}
