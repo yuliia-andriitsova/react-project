@@ -1,0 +1,71 @@
+.DailyCaloriesForm {
+  display: block;
+  width: 608px;
+}
+
+.title {
+  font-family: 'Arimo';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 1.2;
+  
+  color: #212121;
+
+  margin-bottom: 68px;
+}
+
+.form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.element {
+display: flex;
+flex-direction: column;
+margin-right: 32px;
+}
+
+.label {
+  font-family: 'Arimo';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.21;
+  letter-spacing: 0.04em;
+  
+  color: #9B9FAA;
+}
+
+.input {
+  width: 240px;
+  height: 17px;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 1px solid #E0E0E0;
+
+  margin-bottom: 40px;
+}
+
+.radioGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.radio {
+  font-family: 'Arimo';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.21;
+  letter-spacing: 0.04em;
+  
+  color: #9B9FAA;
+
+  margin-left: 4px;
+  margin-right: 28px;
+}
+
