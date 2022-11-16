@@ -10,21 +10,8 @@ import css from './Modal.module.css';
 const modalWindow = document.querySelector('#modal-root');
 
 export default function Modal({ onClose }) {
-  const [weight, setWeight] = useState(21);
-  const [height, setHeight] = useState(100);
-  const [age, setAge] = useState(18);
-  const [desiredWeight, setDesireWeight] = useState(20);
-  const [bloodType, setBloodType] = useState(1);
-  const dispatch = useDispatch();
-
   const dailyRate = useSelector(selectDailyRate);
   const notAllowedProducts = useSelector(selectNotAllowedProducts);
-
-  useEffect(() => {
-    dispatch(fetchDailyRate({ weight, height, age, desiredWeight, bloodType }));
-  }, [dispatch, weight, height, age, desiredWeight, bloodType]);
-
-  // const [modalState, setModalState] = useState(false);
 
   useEffect(() => {
     window.addEventListener('keydown', handleKeyDown);
@@ -33,12 +20,6 @@ export default function Modal({ onClose }) {
       window.removeEventListener('keydown', handleKeyDown);
     };
   });
-
-  // const toggleModal = () => {
-  //   setModalState(prevModalState => {
-  //     return !prevModalState;
-  //   });
-  // };
 
   const handleKeyDown = event => {
     if (event.code === 'Escape') {
