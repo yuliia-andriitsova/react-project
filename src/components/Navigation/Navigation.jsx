@@ -1,20 +1,20 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import styles from './Navigation.module.css';
+import css from './Navigation.module.css';
 
 export default function Navigation() {
   return (
-    <nav className={styles.navigation}>
-      <NavLink to="/signin" className={styles.first}>
+    <nav className={css.navigation}>
+      <NavLink to="/signin" className={css.first}>
         Sign in
       </NavLink>
-      <NavLink to="/registration" className={styles.second}>
+      <NavLink to="/registration" className={css.second}>
         Registration
       </NavLink>
 
       {/* если пользователь авторизирован
-      <NavLink to="/diary" className={styles.first}>Diary</NavLink>
-      <NavLink to="/calculator" className={styles.second}>Calculator</NavLink> */}
+      <NavLink to="/diary" className={css.first}>Diary</NavLink>
+      <NavLink to="/calculator" className={css.second}>Calculator</NavLink> */}
     </nav>
   );
 }

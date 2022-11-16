@@ -1,9 +1,10 @@
 import React from 'react';
+import logo from '../../assets/images/logo/logo-comp-1x.png';
 // import { Link } from 'react-router-dom';
 
 export default function Logo() {
   return (
-    <img src="../../assets/images/logo/logo-comp-1x.png" alt="logo" />
+    <img src={logo} alt="logo" />
     // <Link to="/diary">
     //   <picture>
     //     <source
