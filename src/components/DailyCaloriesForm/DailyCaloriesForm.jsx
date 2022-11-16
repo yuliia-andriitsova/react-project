@@ -7,11 +7,18 @@ import css from './DailyCaloriesForm.module.css';
 export default function DailyCaloriesForm() {
   const [modalState, setModalState] = useState(false);
 
-  const [weight, setWeight] = useState(221);
-  const [height, setHeight] = useState(180);
-  const [age, setAge] = useState(18);
-  const [desiredWeight, setDesireWeight] = useState(20);
-  const [bloodType, setBloodType] = useState(1);
+  // const [weight, setWeight] = useState(21);
+  // const [height, setHeight] = useState(100);
+  // const [age, setAge] = useState(18);
+  // const [desiredWeight, setDesireWeight] = useState(20);
+  // const [bloodType, setBloodType] = useState(1);
+
+  const [weight, setWeight] = useState('');
+  const [height, setHeight] = useState('');
+  const [age, setAge] = useState('');
+  const [desiredWeight, setDesireWeight] = useState('');
+  const [bloodType, setBloodType] = useState('');
+
   const dispatch = useDispatch();
 
   const handleChangeInput = event => {
@@ -22,16 +29,16 @@ export default function DailyCaloriesForm() {
         setWeight(Number(value));
         break;
       case 'height':
-        setHeight(value);
+        setHeight(Number(value));
         break;
       case 'age':
-        setAge(value);
+        setAge(Number(value));
         break;
       case 'desiredWeight':
-        setDesireWeight(value);
+        setDesireWeight(Number(value));
         break;
       case 'bloodType':
-        setBloodType(value);
+        setBloodType(Number(value));
         break;
 
       default:
