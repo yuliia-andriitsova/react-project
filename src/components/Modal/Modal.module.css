@@ -57,12 +57,14 @@
   }
 }
 
-.ModalNumberCalories {
-  margin-top: 20px;
+.ModalLine {
+  width: 330px;
+  border-bottom: 1px solid#E0E0E0;
+  padding-bottom: 32px;
+  margin-top: 32px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.ModalLine {
-  margin-top: 32px;
-  outline: 1 px solid gray;
-  width: 330px;
+.ModalTitleSecond {
 }

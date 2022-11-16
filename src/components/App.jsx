@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import Header from './Header/Header';
+// import Header from './Header/Header';
 import Modal from './Modal/Modal';
 
 export const App = () => {
@@ -7,9 +7,7 @@ export const App = () => {
     <>
       <Modal />
 
-      <Routes>
-        <Route path="/" element={<Header />} />
-      </Routes>
+      <Routes>{/* <Route path="/" element={<Header />} /> */}</Routes>
     </>
   );
 };
