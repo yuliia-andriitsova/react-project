@@ -5,7 +5,7 @@ import authReducer from './Auth/auth-slice';
 const persistConfig = {
   key: 'notes',
   storage,
-  whitelist: ['token'],
+  blacklist: ['user', 'status'],
 };
 const persistedRegistrReducer = persistReducer(persistConfig, authReducer);
 export const rootReducer = combineReducers({
