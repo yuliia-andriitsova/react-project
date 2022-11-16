@@ -1,6 +1,9 @@
 const { createSlice } = require('@reduxjs/toolkit');
 const { StatusForAll } = require('redux/Status');
-const { registrUser } = require('./auth-operations');
+const {
+  registrUserOperation,
+  loginUserOperation,
+} = require('./auth-operations');
 
 const initialState = {
   email: null,
@@ -13,21 +16,37 @@ const authSlice = createSlice({
   name: 'auth',
   initialState,
   extraReducers: {
-    [registrUser.pending](state) {
+    [registrUserOperation.pending](state) {
       state.status = StatusForAll.loading;
     },
-    [registrUser.fulfilled](state, action) {
+    [registrUserOperation.fulfilled](state, action) {
       state.status = StatusForAll.success;
       state.username = action.payload.username;
       state.email = action.payload.email;
       state.token = action.payload.token;
       state.id = action.payload.id;
     },
-    [registrUser.rejected](state) {
+    [registrUserOperation.rejected](state) {
       state.status = StatusForAll.error;
       state.username = null;
       state.email = null;
       state.token = null;
+      state.id = null;
+    },
+    [loginUserOperation.pending](state) {
+      state.status = StatusForAll.loading;
+    },
+    [loginUserOperation.fulfilled](state, action) {
+      state.username = action.payload.username;
+      state.email = action.payload.email;
+      state.token = action.payload.token;
+      state.id = action.payload.id;
+    },
+    [loginUserOperation.rejected](state) {
+      state.username = null;
+      state.email = null;
+      state.token = null;
+      state.id = null;
     },
   },
 });
