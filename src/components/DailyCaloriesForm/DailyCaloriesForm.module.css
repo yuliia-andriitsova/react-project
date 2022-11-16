@@ -44,9 +44,17 @@
   border-top: 0px;
   border-left: 0px;
   border-right: 0px;
-  border-bottom: 1px solid #E0E0E0;
+  border-bottom: 1px solid #e0e0e0;
 
   margin-bottom: 40px;
+}
+
+input:invalid {
+  box-shadow: 0 0 5px 1px rgba(255, 0, 0, 0.373);
+}
+
+input:focus:invalid {
+  box-shadow: none;
 }
 
 .radioGroup {
@@ -111,3 +119,4 @@
   transform: translate(-50%, -50%);
   visibility: visible;
 }
+

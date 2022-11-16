@@ -64,12 +64,16 @@ export default function DailyCaloriesForm() {
             Height *
           </label>
           <input
-            type="text"
+            type="number"
+            min={100}
+            max={250}
             id="height"
             name="height"
             value={height}
             className={css.input}
             onChange={handleChangeInput}
+            required="required"
+            placeholder="Number from 100 to 250"
           />
         </div>
 
@@ -78,12 +82,16 @@ export default function DailyCaloriesForm() {
             Desired weight *
           </label>
           <input
-            type="text"
+            type="number"
+            min={20}
+            max={500}
             id="desiredWeight"
             name="desiredWeight"
             value={desiredWeight}
             className={css.input}
             onChange={handleChangeInput}
+            required="required"
+            placeholder="Number from 20 to 500"
           />
         </div>
 
@@ -92,12 +100,16 @@ export default function DailyCaloriesForm() {
             Age *
           </label>
           <input
-            type="text"
+            type="number"
+            min={18}
+            max={100}
             id="age"
             name="age"
             className={css.input}
             value={age}
             onChange={handleChangeInput}
+            required="required"
+            placeholder="Number from 18 to 100"
           />
         </div>
 
@@ -111,6 +123,7 @@ export default function DailyCaloriesForm() {
               value="1"
               className={css.inputRadio}
               onChange={handleChangeInput}
+              required="required"
             />
             <label htmlFor="bloodType1" className={css.radio}>
               1
@@ -153,12 +166,16 @@ export default function DailyCaloriesForm() {
             Current weight *
           </label>
           <input
-            type="text"
+            type="number"
+            min={20}
+            max={500}
             id="weight"
             name="weight"
             className={css.input}
             value={weight}
             onChange={handleChangeInput}
+            required="required"
+            placeholder="Number from 20 to 500"
           />
         </div>
         <button type="submit">Start losing weight</button>
