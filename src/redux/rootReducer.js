@@ -6,7 +6,7 @@ import { dailyRateReducer } from './Daily-rate/daily-rate-slice';
 const persistConfig = {
   key: 'notes',
   storage,
-  whitelist: ['token'],
+  blacklist: ['user', 'status'],
 };
 const persistedRegistrReducer = persistReducer(persistConfig, authReducer);
 export const rootReducer = combineReducers({
