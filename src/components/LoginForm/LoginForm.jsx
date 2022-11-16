@@ -17,31 +17,33 @@ const LoginForm = () => {
   };
 
   return (
-    <div>
+    <div className={css.loginWrap}>
       <h2 className={css.loginTitle}>SIGN IN</h2>
-      <form onSubmit={handleSubmit}>
-        <label className={css.label}>
-          Email &#8432;
+      <form onSubmit={handleSubmit} className={css.form}>
+        <div className={css.input}>
+          <label className={css.label}>Email *</label>
           <input
             type="email"
             name="email"
             value={email}
             onChange={event => setEmail(event.target.value)}
-            className={css.input}
+            className={css.inputField}
           />
-        </label>
-        <label className={css.label}>
-          Password &#8432;
+        </div>
+        <div className={css.input}>
+          <label className={css.label}>Password *</label>
           <input
             type="password"
             name="password"
             value={password}
             onChange={event => setPassword(event.target.value)}
-            className={css.input}
+            className={css.inputField}
           />
-        </label>
-        <LoginBtn />
-      <RegisterBtn />
+        </div>
+        <div className={css.btnWrap}>
+          <LoginBtn />
+          <RegisterBtn />
+        </div>
       </form>
     </div>
   );

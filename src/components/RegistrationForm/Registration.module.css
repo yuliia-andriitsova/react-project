@@ -6,6 +6,13 @@
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--orange);
+  margin-bottom: 60px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
 .label {
@@ -18,10 +25,20 @@
 }
 
 .input {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputField {
   width: 240px;
   height: 20px;
   border-top: 0px;
   border-left: 0px;
   border-right: 0px;
   border-bottom: 1px solid var(--decoration-gray);
+}
+
+.btnWrap {
+  display: flex;
+  gap: 32px;
 }
