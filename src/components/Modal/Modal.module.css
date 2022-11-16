@@ -25,7 +25,7 @@
   transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1), 0px 2px 4px rgba(0, 0, 0, 0.1),
     0px 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: #ffffff;
+  background-color: var(--white-text);
 }
 
 .ModalCloseIcon {
@@ -38,7 +38,7 @@
 
 .ModalCloseIcon:hover,
 .ModalCloseIcon:focus {
-  background-color: #fc842d;
+  background-color: var(--orange);
   border-radius: 50%;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }

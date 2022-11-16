@@ -1,7 +1,9 @@
-import React from 'react';
+import Modal from 'components/Modal/Modal';
+import React, { useState } from 'react';
 import css from './DailyCaloriesForm.module.css';
 
 export default function DailyCaloriesForm() {
+  const [modalState, setModalState] = useState(false);
   return (
     <div className={css.DailyCaloriesForm}>
       <h2 className={css.title}>
@@ -75,7 +77,10 @@ export default function DailyCaloriesForm() {
           />
         </div>
       </form>
-      <button type="submit">Start losing weight</button>
+      <button type="submit" onClick={() => setModalState(true)}>
+        Start losing weight
+      </button>
+      {modalState && <Modal onClose={() => setModalState(false)} />}
     </div>
   );
 }

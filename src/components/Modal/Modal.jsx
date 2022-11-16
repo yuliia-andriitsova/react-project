@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { useDispatch } from 'react-redux';
-import dailyRate from 'services/API';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchDailyRate } from 'redux/Daily-rate/daily-rate-operations';
+import {
+  selectDailyRate,
+  selectNotAllowedProducts,
+} from 'redux/Daily-rate/daily-rate-selectors';
 import css from './Modal.module.css';
 const modalWindow = document.querySelector('#modal-root');
 
-export default function Modal() {
+export default function Modal({ onClose }) {
   const [weight, setWeight] = useState(21);
   const [height, setHeight] = useState(100);
   const [age, setAge] = useState(18);
@@ -13,11 +17,14 @@ export default function Modal() {
   const [bloodType, setBloodType] = useState(1);
   const dispatch = useDispatch();
 
+  const dailyRate = useSelector(selectDailyRate);
+  const notAllowedProducts = useSelector(selectNotAllowedProducts);
+
   useEffect(() => {
-    dispatch(dailyRate({ weight, height, age, desiredWeight, bloodType }));
+    dispatch(fetchDailyRate({ weight, height, age, desiredWeight, bloodType }));
   }, [dispatch, weight, height, age, desiredWeight, bloodType]);
 
-  const [modalState, setModalState] = useState(false);
+  // const [modalState, setModalState] = useState(false);
 
   useEffect(() => {
     window.addEventListener('keydown', handleKeyDown);
@@ -27,32 +34,28 @@ export default function Modal() {
     };
   });
 
-  const toggleModal = modalState => {
-    if (modalState) {
-      setModalState(!modalState);
-    }
-  };
+  // const toggleModal = () => {
+  //   setModalState(prevModalState => {
+  //     return !prevModalState;
+  //   });
+  // };
 
   const handleKeyDown = event => {
     if (event.code === 'Escape') {
-      toggleModal();
+      onClose();
     }
   };
 
   const handleCloseModal = event => {
     if (event.currentTarget === event.target) {
-      toggleModal();
+      onClose();
     }
   };
 
   return createPortal(
-    <div className={css.Overlay} onClick={handleKeyDown}>
+    <div className={css.Overlay} onClick={handleCloseModal}>
       <div className={css.Modal}>
-        <button
-          type="button"
-          className={css.ModalCloseIcon}
-          onClick={handleCloseModal}
-        >
+        <button type="button" className={css.ModalCloseIcon} onClick={onClose}>
           <svg
             width="12"
             height="12"
@@ -75,11 +78,11 @@ export default function Modal() {
         </p>
         <span></span>
         <h3 className={css.ModalTitleSecond}>Foods you should not eat</h3>
-        {/* <ol className={css.ModalListNotEat}>
-          {notAllowedproducts.map(product => (
-            <li>{notAllowedProducts}</li>
+        <ol className={css.ModalListNotEat}>
+          {notAllowedProducts.map(product => (
+            <li key={product}>{product}</li>
           ))}
-        </ol> */}
+        </ol>
         <button type="button">Start losing weight</button>
       </div>
     </div>,
