@@ -17,7 +17,7 @@ export const fetchDailyRatePrivate = createAsyncThunk(
   'daily/daily-rate-private',
   async (info, thunkApi) => {
     try {
-      const userId = thunkApi.getState().auth.sid;
+      const userId = thunkApi.getState().user.id;
       const response = await axios.post('/daily-rate/' + userId, info);
       return response.data;
     } catch (error) {
