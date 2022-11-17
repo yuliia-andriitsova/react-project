@@ -1,27 +1,74 @@
 .loginTitle {
-    font-family: var(----primary-font);
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 0.9;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--orange);
+  font-family: var(----primary-font);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 0.9;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 60px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
 .label {
-    font-family: var(--secondary-font);
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 1.21;
-    letter-spacing: 0.04em;
-    color: var(--text-gray);
+  font-family: var(--secondary-font);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.21;
+  letter-spacing: 0.04em;
+  color: var(--text-gray);
+  margin-bottom: 20px;
 }
 
 .input {
-    width: 240px;
-    height: 20px;
-    border-top: 0px;
-    border-left: 0px;
-    border-right: 0px;
-    border-bottom: 1px solid var(--decoration-gray);
+  display: flex;
+  flex-direction: column;
+}
+
+.inputField {
+  font-family: var(--secondary-font);
+  width: 240px;
+  height: 20px;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 1px solid var(--decoration-gray);
+}
+
+.btnWrap {
+  display: flex;
+  gap: 32px;
+}
+
+.btn {
+  font-family: var(--secondary-font);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  background-color: var(--orange);
+  color: var(--white-text);
+  border-radius: 30px;
+  border-color: transparent;
+}
+
+.btn:hover,
+.btn:focus {
+    box-shadow: 0px 4px 10px rgba(252, 132, 45, 0.5);
+}
+
+.registerBtn {
+  composes: btn;
+  text-decoration: none;
+  text-align: center;
+  background-color: var(--white-text);
+  color: var(--orange);
+  border: 2px solid #fc842d;
+  width: 181px;
+  padding: 13px 37px;
+  box-shadow: none;
 }
