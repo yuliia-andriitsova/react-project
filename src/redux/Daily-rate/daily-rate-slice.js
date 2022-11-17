@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { fetchDailyRate } from './daily-rate-operations';
+import { fetchDailyRate, fetchDailyRatePrivate } from './daily-rate-operations';
 
 export const dailylState = {
   isLoading: false,
@@ -23,6 +23,19 @@ const dailyRateSlice = createSlice({
     },
 
     [fetchDailyRate.rejected](state, action) {
+      state.isLoading = false;
+      state.error = action.payload;
+    },
+    [fetchDailyRatePrivate.pending](state) {
+      state.isLoading = true;
+    },
+    [fetchDailyRatePrivate.fulfilled](state, action) {
+      state.isLoading = false;
+      state.dailyRate = action.payload.dailyRate;
+      state.notAllowedProducts = action.payload.notAllowedProducts;
+    },
+
+    [fetchDailyRatePrivate.rejected](state, action) {
       state.isLoading = false;
       state.error = action.payload;
     },

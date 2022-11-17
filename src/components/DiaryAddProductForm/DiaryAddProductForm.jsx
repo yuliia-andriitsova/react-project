@@ -8,9 +8,6 @@ export default function DairyAddProductForm() {
   const dispatch = useDispatch();
   const [product, setProduct] = useState('');
   const [grams, setGrams] = useState('');
-  // const [grams, setGrams] = useState('');
-
-  //   const products = useSelector(state => state.products.items);
 
   const handleAddProduct = e => {
     e.preventDefault();

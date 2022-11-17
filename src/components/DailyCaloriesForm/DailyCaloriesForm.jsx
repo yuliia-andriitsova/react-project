@@ -1,25 +1,13 @@
-import Modal from 'components/Modal/Modal';
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { fetchDailyRate } from 'redux/Daily-rate/daily-rate-operations';
 import css from './DailyCaloriesForm.module.css';
+import PropTypes from 'prop-types';
 
-export default function DailyCaloriesForm() {
-  const [modalState, setModalState] = useState(false);
-
-  // const [weight, setWeight] = useState(21);
-  // const [height, setHeight] = useState(100);
-  // const [age, setAge] = useState(18);
-  // const [desiredWeight, setDesireWeight] = useState(20);
-  // const [bloodType, setBloodType] = useState(1);
-
+export default function DailyCaloriesForm({ onSubmit }) {
   const [weight, setWeight] = useState('');
   const [height, setHeight] = useState('');
   const [age, setAge] = useState('');
   const [desiredWeight, setDesireWeight] = useState('');
   const [bloodType, setBloodType] = useState('');
-
-  const dispatch = useDispatch();
 
   const handleChangeInput = event => {
     const { name, value } = event.target;
@@ -48,9 +36,7 @@ export default function DailyCaloriesForm() {
 
   const handleSubmit = event => {
     event.preventDefault();
-    // const { weight, height, age, desiredWeight, bloodType } = event.target.name;
-    dispatch(fetchDailyRate({ weight, height, age, desiredWeight, bloodType }));
-    setModalState(true);
+    onSubmit({ weight, height, age, desiredWeight, bloodType });
   };
 
   return (
@@ -180,8 +166,10 @@ export default function DailyCaloriesForm() {
         </div>
         <button type="submit">Start losing weight</button>
       </form>
-
-      {modalState && <Modal onClose={() => setModalState(false)} />}
     </div>
   );
 }
+
+DailyCaloriesForm.propTyres = {
+  onSubmit: PropTypes.func.isRequired,
+};
