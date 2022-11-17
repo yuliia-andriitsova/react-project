@@ -1,7 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { StatusForAll } from 'redux/Status';
 import {
-  getUserOperation,
   loginUserOperation,
   logoutUserOperation,
   refreshOperation,
@@ -58,17 +57,6 @@ const authSlice = createSlice({
       state.username = null;
       state.email = null;
       state.token = null;
-    },
-    [getUserOperation.pending](state) {
-      state.status = StatusForAll.loading;
-    },
-    [getUserOperation.fulfilled](state, action) {
-      state.status = StatusForAll.success;
-      state.user.email = action.payload.email;
-      state.user.username = action.payload.username;
-    },
-    [getUserOperation.rejected](state) {
-      state.status = StatusForAll.error;
     },
   },
 });
