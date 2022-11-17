@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { fetchDailyRate } from 'redux/Daily-rate/daily-rate-operations';
 import {
   selectDailyRate,
   selectNotAllowedProducts,
@@ -12,10 +11,8 @@ import css from './Modal.module.css';
 const modalWindow = document.querySelector('#modal-root');
 
 export default function Modal({ onClose }) {
-
   const dailyRate = useSelector(selectDailyRate);
   const notAllowedProducts = useSelector(selectNotAllowedProducts);
-
 
   useEffect(() => {
     window.addEventListener('keydown', handleKeyDown);
