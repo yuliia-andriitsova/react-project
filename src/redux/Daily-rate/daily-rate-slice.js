@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-
-import { fetchDailyRate, fetchDailyRatePrivate } from './daily-rate-operations';
+import { fetchDailyRate } from './daily-rate-operations';
 
 export const dailylState = {
   isLoading: false,
