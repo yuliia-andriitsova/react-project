@@ -22,3 +22,8 @@ export async function getUserdata() {
   const { data } = await axios.get('/user');
   return data;
 }
+
+export const getProduct = async query => {
+  const { data } = await axios.get('/product', { params: { query } });
+  return data;
+};

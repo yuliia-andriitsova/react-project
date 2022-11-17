@@ -18,10 +18,8 @@ const persistUserConfig = {
   blacklist: ['status'],
 };
 const persistedUserReducer = persistReducer(persistUserConfig, userReduser);
-const persistedRegistrReducer = persistReducer(
-  persistRegistrConfig,
-  authReducer
-);
+const persistedRegistrReducer = persistReducer(persistRegistrConfig, authReducer);
+
 export const rootReducer = combineReducers({
   auth: persistedRegistrReducer,
   dailyRate: dailyRateReducer,
