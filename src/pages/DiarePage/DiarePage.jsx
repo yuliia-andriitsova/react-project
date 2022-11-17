@@ -7,8 +7,8 @@ import React from 'react';
 export default function DairyPage() {
   return (
     <>
-      <Calendar/>
       <Header />
+      <Calendar/>
       <DairyAddProductForm />
       {/* <DailyProductsList /> */}
     </>
