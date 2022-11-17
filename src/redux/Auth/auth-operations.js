@@ -16,7 +16,6 @@ export const loginUserOperation = createAsyncThunk(
     try {
       const response = await postLogin(body);
       token.set(response.accessToken);
-      console.log('response', response);
       return response;
     } catch (error) {
       if (error.response.status === 403) {
@@ -46,12 +45,8 @@ export const refreshOperation = createAsyncThunk(
 
       if (state.auth.accessToken) {
         token.set(state.auth.refreshToken);
-        console.log('state.auth.refreshToken', state.auth.refreshToken);
-        console.log(state.auth.sid);
         const response = await getUserRefresh(state.auth.sid);
-
         token.set(response.newAccessToken);
-        console.log('response', response);
         return response;
       } else {
         return thunkAPI.rejectWithValue();
