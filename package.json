@@ -12,6 +12,7 @@
     "create-redux-store": "^1.1.2",
     "modern-normalize": "^1.1.0",
     "react": "^18.2.0",
+    "react-datepicker": "^4.8.0",
     "react-dom": "^18.1.0",
     "react-loader-spinner": "^5.3.4",
     "react-redux": "^8.0.5",

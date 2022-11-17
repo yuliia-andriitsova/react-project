@@ -7,6 +7,7 @@ import { loginUserOperation } from '../../redux/Auth/auth-operations';
 // import { toast } from 'react-toastify';
 import { NavLink } from 'react-router-dom';
 
+
 const RegistrationForm = () => {
   const dispatch = useDispatch();
   const [name, setName] = useState('');
