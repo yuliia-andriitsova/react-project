@@ -1,63 +1,34 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { StatusForAll } from 'redux/Status';
+import { getProductsData } from './product-search-operations';
 
-import {
-  deleteProductsData,
-  getProductsData,
-  setProductsData,
-} from './product-search-operations';
-
-const Status = {
-  init: 'INIT',
-  loading: 'LOADING',
-  success: 'SUCCESS',
-  error: 'ERROR',
-};
 const initialState = {
-  items: [],
-  isLoading: false,
+  products: [],
+  _id: null,
+  categories: [],
+  title: {},
   error: null,
-  status: Status.init,
-  // accessToken: ,
-};
+  status: StatusForAll.init,
+}
+
 export const productSearchSlice = createSlice({
   name: 'products',
   initialState,
-  extraReducers: builder => {
-    builder
-      .addCase(getProductsData.pending, state => {
-        state.status = Status.loading;
-      })
-      .addCase(getProductsData.fulfilled, (state, action) => {
-        state.status = Status.success;
-        state.items = [...action.payload];
-        state.accessToken = action.payload.accessToken;
-      })
-      .addCase(getProductsData.rejected, (state, action) => {
-        state.status = Status.error;
-        state.accessToken = action.payload.accessToken;
-      })
-      .addCase(setProductsData.pending, state => {
-        state.status = Status.loading;
-      })
-      .addCase(setProductsData.fulfilled, (state, action) => {
-        state.status = Status.success;
-        state.items = [...action.payload];
-      })
-      .addCase(setProductsData.rejected, state => {
-        state.status = Status.error;
-        console.log(state.accessToken);
-      })
-      .addCase(deleteProductsData.pending, state => {
-        state.status = Status.loading;
-      })
-      .addCase(deleteProductsData.fulfilled, (state, action) => {
-        state.status = Status.success;
-        state.items = [...action.payload];
-      })
-      .addCase(deleteProductsData.rejected, state => {
-        state.status = Status.error;
-      });
+  extraReducers: {
+    [getProductsData.pending](state) {
+      state.status = StatusForAll.loading;
+    },
+    [getProductsData.fulfilled](state, action) {
+      state.status = StatusForAll.success;
+      state._id = action.payload._id;
+      state.title = action.payload.title.ua;
+      state.products = action.payload;
+    },
+    [getProductsData.rejected](state) { 
+    state.status = StatusForAll.error;
   },
+  }
 });
 
 export default productSearchSlice.reducer;
+
