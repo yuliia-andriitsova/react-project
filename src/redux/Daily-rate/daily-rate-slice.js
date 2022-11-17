@@ -26,19 +26,6 @@ const dailyRateSlice = createSlice({
       state.isLoading = false;
       state.error = action.payload;
     },
-    [fetchDailyRatePrivate.pending](state) {
-      state.isLoading = true;
-    },
-    [fetchDailyRatePrivate.fulfilled](state, action) {
-      state.isLoading = false;
-      state.dailyRate = action.payload.dailyRate;
-      state.notAllowedProducts = action.payload.notAllowedProducts;
-    },
-
-    [fetchDailyRatePrivate.rejected](state, action) {
-      state.isLoading = false;
-      state.error = action.payload;
-    },
   },
 });
 

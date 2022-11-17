@@ -7,7 +7,7 @@ import productReducer from './Product-search/product-search-slice.js';
 const persistConfig = {
   key: 'notes',
   storage,
-  blacklist: ['user', 'status'],
+  blacklist: ['status'],
 };
 const persistedRegistrReducer = persistReducer(persistConfig, authReducer);
 export const rootReducer = combineReducers({
