@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import { refreshOperation } from 'redux/Auth/auth-operations';
+import RightSideBar from './RightSideBar/RightSideBar';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -22,6 +23,7 @@ export const App = () => {
         <Route path="/registration" element={<RegistrationPage />} />
         <Route path="/dairy" element={<DairyPage />} />
       </Routes>
+      <RightSideBar />
     </>
   );
 };
