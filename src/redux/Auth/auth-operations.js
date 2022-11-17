@@ -1,6 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { getUserRefresh, postLogin, postLogout } from 'services/API';
+
 export const token = {
   set(token) {
     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -15,6 +16,7 @@ export const loginUserOperation = createAsyncThunk(
     try {
       const response = await postLogin(body);
       token.set(response.accessToken);
+      console.log('response', response);
       return response;
     } catch (error) {
       if (error.response.status === 403) {
@@ -41,9 +43,15 @@ export const refreshOperation = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const state = thunkAPI.getState();
-      if (state.auth.token) {
-        token.set(state.auth.token);
-        const response = await getUserRefresh();
+
+      if (state.auth.accessToken) {
+        token.set(state.auth.refreshToken);
+        console.log('state.auth.refreshToken', state.auth.refreshToken);
+        console.log(state.auth.sid);
+        const response = await getUserRefresh(state.auth.sid);
+
+        token.set(response.newAccessToken);
+        console.log('response', response);
         return response;
       } else {
         return thunkAPI.rejectWithValue();
