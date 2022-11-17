@@ -5,6 +5,8 @@ import authReducer from './Auth/auth-slice';
 import userReduser from './User/user-slice';
 import { dailyRateReducer } from './Daily-rate/daily-rate-slice';
 import productReducer from './Product-search/product-search-slice.js';
+import daySummaryReducer from './Day/day-slice';
+
 const persistRegistrConfig = {
   key: 'auth',
   storage,
@@ -24,5 +26,6 @@ export const rootReducer = combineReducers({
   auth: persistedRegistrReducer,
   dailyRate: dailyRateReducer,
   products: productReducer,
+  daySummary: daySummaryReducer,
   user: persistedUserReducer,
 });
