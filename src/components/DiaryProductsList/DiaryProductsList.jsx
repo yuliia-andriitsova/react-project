@@ -1,15 +1,11 @@
-// import { useDispatch, useSelector } from 'react-redux';
-// import { deleteProductsData } from 'redux/Product-search/product-search-operations';
-// import { getProductsArr } from 'redux/Product-search/product-search-selectors';
-
+import axios from 'axios';
 import Loader from 'components/Loader/Loader';
+import PropTypes from 'prop-types';
 import { debounce } from 'lodash';
 import { useMemo, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getProductsData } from 'redux/Product-search/product-search-operations';
-import { selectProducts } from 'redux/Product-search/product-search-selectors';
+import { useDispatch } from 'react-redux';
 
-export const DailyProductsList = () => {
+export const DailyProductsList = ({ onSelect }) => {
   const [products, setProducts] = useState([]);
 
   const [isLoading, setIsLoading] = useState(false);
@@ -17,35 +13,38 @@ export const DailyProductsList = () => {
 
   const dispatch = useDispatch();
 
-  // const products = useSelector(selectProducts);
+  const fetchProducts = useMemo(
+    () =>
+      debounce(search => {
+        if (search.length < 1) {
+          return;
+        }
 
-  // const fetchProducts = useMemo(
-  //   () =>
-  //     debounce(search => {
-  //       if (search.length < 1) {
-  //         return;
-  //       }
-  //       setIsLoading(true);
-  //       setProducts(null);
-  //     }, 500),
-  //   []
-  // );
+        setIsLoading(true);
+        axios
+          .get('/product', { params: { search } })
+          .then(({ data }) => setProducts(data))
+          .finally(() => {
+            setIsLoading(false);
+          });
+      }, 500),
+    []
+  );
 
   const handleChange = event => {
     const { value } = event.target;
     setValue(value);
-    dispatch(getProductsData(value.trim()));
-    setProducts();
+    fetchProducts(value.trim());
     if (value.trim().length < 1) {
       setProducts(null);
     }
   };
 
-  // const handleSelectProduct = product => {
-  //   setValue(product.title.ua);
-  //   setProducts(null);
-  //   onSelect(product._id);
-  // };
+  const handleSelectProduct = product => {
+    setValue(product.title.ua);
+    setProducts(null);
+    onSelect(product._id);
+  };
 
   return (
     <>
@@ -71,22 +70,6 @@ export const DailyProductsList = () => {
   );
 };
 
-//   const products = useSelector(getProductsArr);
-//   const dispatch = useDispatch();
-//   const handleDeleteProduct = id => {
-//     dispatch(deleteProductsData(id));
-//   };
-//   return (
-//     <ul>
-//       {products.map(product => (
-//         <li key={product.id}>
-//           <p>{product.categories}</p>
-//           <p>{product.weight}</p>
-//           <p>{product.calories}</p>
-//           <button onClick={() => handleDeleteProduct(product.id)} type="button">
-//             Delete
-//           </button>
-//         </li>
-//       ))}
-//     </ul>
-//   );
+DailyProductsList.propTypes = {
+  onSelect: PropTypes.func.isRequired,
+};

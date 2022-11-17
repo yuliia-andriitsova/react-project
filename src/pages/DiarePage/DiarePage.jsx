@@ -1,14 +1,15 @@
-import DairyAddProductForm from 'components/DiaryAddProductForm/DiaryAddProductForm';
+import { DailyProductsList } from 'components/DiaryProductsList/DiaryProductsList';
 import Header from 'components/Header/Header';
-// import { DailyProductsList } from 'components/DiaryProductsList/DiaryProductsList';
 import React from 'react';
 
 export default function DairyPage() {
+  const handleSelect = () => {
+    console.log('это выбранный продукт!');
+  };
   return (
     <>
       <Header />
-      <DairyAddProductForm />
-      {/* <DailyProductsList /> */}
+      <DailyProductsList onSelect={handleSelect} />
     </>
   );
 }
