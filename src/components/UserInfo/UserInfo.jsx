@@ -4,18 +4,14 @@ import { logoutUserOperation } from 'redux/Auth/auth-operations';
 function UserInfo() {
   const dispatch = useDispatch();
 
-  const user = useSelector(state => state.auth.user.username);
+  const username = useSelector(state => state.auth.user?.username);
   return (
-    <>
-      <ul>
-        <li>
-          <p>{user}</p>
-          <button type="button" onClick={() => dispatch(logoutUserOperation())}>
-            Exit
-          </button>
-        </li>
-      </ul>
-    </>
+    <div>
+      <p>hello {username}</p>
+      <button type="button" onClick={() => dispatch(logoutUserOperation())}>
+        Exit
+      </button>
+    </div>
   );
 }
 export default UserInfo;

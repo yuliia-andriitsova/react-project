@@ -1,13 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { StatusForAll } from 'redux/Status';
 import {
+  getUserOperation,
   loginUserOperation,
   logoutUserOperation,
   refreshOperation,
 } from './auth-operations';
 
 const initialState = {
-  user: null,
+  user: { username: null, email: null },
   sid: null,
   accessToken: null,
   refreshToken: null,
@@ -52,15 +53,23 @@ const authSlice = createSlice({
 
       state.accessToken = action.payload.newAccessToken;
       state.refreshToken = action.payload.newRefreshToken;
-
-      // state.accessToken = newAccessToken;
-      // state.refreshToken = null;
     },
     [refreshOperation.rejected](state) {
       state.status = StatusForAll.error;
       state.username = null;
       state.email = null;
       state.token = null;
+    },
+    [getUserOperation.pending](state) {
+      state.status = StatusForAll.loading;
+    },
+    [getUserOperation.fulfilled](state, action) {
+      state.status = StatusForAll.success;
+      state.user.email = action.payload.email;
+      state.user.username = action.payload.username;
+    },
+    [getUserOperation.rejected](state) {
+      state.status = StatusForAll.error;
     },
   },
 });

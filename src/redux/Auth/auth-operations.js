@@ -1,6 +1,11 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { getUserRefresh, postLogin, postLogout } from 'services/API';
+import {
+  getUserdata,
+  getUserRefresh,
+  postLogin,
+  postLogout,
+} from 'services/API';
 
 export const token = {
   set(token) {
@@ -28,7 +33,7 @@ export const logoutUserOperation = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const response = await postLogout();
-      token.unset();
+      token.unset(response.accessToken);
       return response;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -43,16 +48,24 @@ export const refreshOperation = createAsyncThunk(
 
       if (state.auth.accessToken) {
         token.set(state.auth.refreshToken);
-        console.log('state.auth.refreshToken', state.auth.refreshToken);
-        console.log(state.auth.sid);
         const response = await getUserRefresh(state.auth.sid);
-
         token.set(response.newAccessToken);
-        console.log('response', response);
+        thunkAPI.dispatch(getUserOperation());
         return response;
       } else {
         return thunkAPI.rejectWithValue();
       }
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+export const getUserOperation = createAsyncThunk(
+  'auth/logout',
+  async (_, thunkAPI) => {
+    try {
+      const response = await getUserdata();
+      return response;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
