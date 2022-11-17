@@ -1,3 +1,4 @@
+import CalculatorPage from 'pages/CalculatorPage/CalculatorPage';
 import DairyPage from 'pages/DiarePage/DiarePage';
 import LoginPage from 'pages/LoginPage/LoginPage';
 import MainPage from 'pages/MainPage/MainPage';
@@ -22,6 +23,7 @@ export const App = () => {
         <Route path="/signin" element={<LoginPage />} />
         <Route path="/registration" element={<RegistrationPage />} />
         <Route path="/dairy" element={<DairyPage />} />
+        <Route path="/calculator" element={<CalculatorPage />} />
       </Routes>
       <RightSideBar />
     </>

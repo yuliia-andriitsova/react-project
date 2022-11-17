@@ -1,9 +1,11 @@
-import LoginForm from "components/LoginForm/LoginForm";
+import LoginForm from 'components/LoginForm/LoginForm';
+import Logo from 'components/Logo/Logo';
 
 export default function LoginPage() {
-    return (
-        <div>
-            <LoginForm/>
-        </div>
-    )
-};
+  return (
+    <div>
+      <Logo />
+      <LoginForm />
+    </div>
+  );
+}

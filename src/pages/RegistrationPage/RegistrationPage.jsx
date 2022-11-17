@@ -1,9 +1,11 @@
-import RegistrationForm from "components/RegistrationForm/RegistrationForm";
+import Logo from 'components/Logo/Logo';
+import RegistrationForm from 'components/RegistrationForm/RegistrationForm';
 
 export default function RegistrationPage() {
-    return (
-        <div>
-            <RegistrationForm/>
-        </div>
-    )
+  return (
+    <div>
+      <Logo />
+      <RegistrationForm />
+    </div>
+  );
 }

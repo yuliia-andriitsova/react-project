@@ -7,7 +7,7 @@ import {
 } from './auth-operations';
 
 const initialState = {
-  user: null,
+  user: { username: null, email: null },
   sid: null,
   accessToken: null,
   refreshToken: null,
@@ -49,12 +49,8 @@ const authSlice = createSlice({
     [refreshOperation.fulfilled](state, action) {
       state.status = StatusForAll.success;
       state.sid = action.payload.sid;
-
       state.accessToken = action.payload.newAccessToken;
       state.refreshToken = action.payload.newRefreshToken;
-
-      // state.accessToken = newAccessToken;
-      // state.refreshToken = null;
     },
     [refreshOperation.rejected](state) {
       state.status = StatusForAll.error;
