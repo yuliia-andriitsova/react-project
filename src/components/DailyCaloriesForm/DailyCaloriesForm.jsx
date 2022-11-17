@@ -1,8 +1,4 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import moment from 'moment';
-import { fetchDailyRate } from 'redux/Daily-rate/daily-rate-operations';
-import { fetchDaySummary } from 'redux/Day/day-operations';
 import css from './DailyCaloriesForm.module.css';
 import PropTypes from 'prop-types';
 
@@ -12,9 +8,6 @@ export default function DailyCaloriesForm({ onSubmit }) {
   const [age, setAge] = useState('');
   const [desiredWeight, setDesireWeight] = useState('');
   const [bloodType, setBloodType] = useState('');
-  const [date, setDate] = useState(moment(new Date()).format('YYYY-MM-DD'));
-
-  // const [productId, setProductId] = useState('');
 
   const handleChangeInput = event => {
     const { name, value } = event.target;
@@ -44,7 +37,6 @@ export default function DailyCaloriesForm({ onSubmit }) {
   const handleSubmit = event => {
     event.preventDefault();
     onSubmit({ weight, height, age, desiredWeight, bloodType });
-    dispatch(fetchDaySummary({ date }));
   };
 
   return (
