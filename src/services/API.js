@@ -18,3 +18,7 @@ export async function getUserRefresh(sid) {
   const { data } = await axios.post('/auth/refresh', { sid });
   return data;
 }
+export async function getUserdata() {
+  const { data } = await axios.get('/user');
+  return data;
+}

@@ -9,6 +9,7 @@ const persistConfig = {
   storage,
   blacklist: ['status'],
 };
+// const persistedUserReducer,
 const persistedRegistrReducer = persistReducer(persistConfig, authReducer);
 export const rootReducer = combineReducers({
   auth: persistedRegistrReducer,
