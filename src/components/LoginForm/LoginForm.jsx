@@ -1,7 +1,7 @@
 import LoginBtn from 'components/Buttons/LoginBtn';
-import RegisterBtn from 'components/Buttons/RegisterBtn';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import { loginUserOperation } from 'redux/Auth/auth-operations';
 import css from './LoginForm.module.css';
 
@@ -42,7 +42,9 @@ const LoginForm = () => {
         </div>
         <div className={css.btnWrap}>
           <LoginBtn />
-          <RegisterBtn />
+          <NavLink to="/registration" className={css.registerBtn}>
+            Register
+          </NavLink>
         </div>
       </form>
     </div>

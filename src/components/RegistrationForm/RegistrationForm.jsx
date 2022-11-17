@@ -1,11 +1,11 @@
-import LoginBtn from 'components/Buttons/LoginBtn';
 import RegisterBtn from 'components/Buttons/RegisterBtn';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { postRegistartionUser } from 'services/API';
 import css from './Registration.module.css';
 import { loginUserOperation } from '../../redux/Auth/auth-operations';
-import { toast } from 'react-toastify';
+// import { toast } from 'react-toastify';
+import { NavLink } from 'react-router-dom';
 
 const RegistrationForm = () => {
   const dispatch = useDispatch();
@@ -22,7 +22,9 @@ const RegistrationForm = () => {
       setPassword('');
       setEmail('');
     } catch (error) {
-      toast.error('Provided email already exists');
+      if (error.response.status === 409) {
+        alert('Provided email already exists. Please, try another email.');
+      }
     }
   }
 
@@ -65,7 +67,9 @@ const RegistrationForm = () => {
           />
         </div>
         <div className={css.btnWrap}>
-          <LoginBtn />
+          <NavLink to="/signin" className={css.loginBtn}>
+            Login
+          </NavLink>
           <RegisterBtn />
         </div>
       </form>

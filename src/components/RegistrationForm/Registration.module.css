@@ -22,6 +22,7 @@
   line-height: 1.21;
   letter-spacing: 0.04em;
   color: var(--text-gray);
+  margin-bottom: 20px;
 }
 
 .input {
@@ -30,6 +31,7 @@
 }
 
 .inputField {
+  font-family: var(--secondary-font);
   width: 240px;
   height: 20px;
   border-top: 0px;
@@ -41,4 +43,29 @@
 .btnWrap {
   display: flex;
   gap: 32px;
+}
+
+.btn {
+  font-family: var(--secondary-font);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  background-color: var(--orange);
+  color: var(--white-text);
+  border-radius: 30px;
+  border-color: transparent;
+}
+
+.btn:hover,
+.btn:focus {
+  box-shadow: 0px 4px 10px rgba(252, 132, 45, 0.5);
+}
+
+.loginBtn {
+  composes: btn;
+  text-decoration: none;
+  text-align: center;
+  width: 181px;
+  padding: 13px 51px;
 }
