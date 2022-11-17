@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+
 import { fetchDailyRate } from './daily-rate-operations';
 
 export const dailylState = {
@@ -18,7 +19,7 @@ const dailyRateSlice = createSlice({
     [fetchDailyRate.fulfilled](state, action) {
       state.isLoading = false;
       state.dailyRate = action.payload.dailyRate;
-      state.notAllowedProducts = action.payload.notAllowedProducts;
+      state.notAllowedProducts = action.payload.notAllowedProducts.slice(0, 9);
     },
 
     [fetchDailyRate.rejected](state, action) {
@@ -29,3 +30,4 @@ const dailyRateSlice = createSlice({
 });
 
 export const dailyRateReducer = dailyRateSlice.reducer;
+
