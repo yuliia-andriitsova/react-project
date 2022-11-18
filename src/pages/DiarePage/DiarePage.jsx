@@ -1,17 +1,14 @@
-import { DailyProductsList } from 'components/DiaryProductsList/DiaryProductsList';
 import Header from 'components/Header/Header';
-import Calendar from 'components/DiaryDateСalendar/DiaryDateСalendar';
-import React from 'react';
+import { DiaryAddProductForm } from 'components/DiaryAddProductForm/DiaryAddProductForm';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { fetchDaySummary } from 'redux/Day/day-operations';
 
 export default function DairyPage() {
-  const handleSelect = () => {
-    console.log('это выбранный продукт!');
-  };
   return (
     <>
       <Header />
-      <DailyProductsList onSelect={handleSelect} />
-      <Calendar />
+      <DiaryAddProductForm />
     </>
   );
 }

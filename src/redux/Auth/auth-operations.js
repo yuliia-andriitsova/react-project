@@ -38,23 +38,23 @@ export const logoutUserOperation = createAsyncThunk(
     }
   }
 );
-export const refreshOperation = createAsyncThunk(
-  'auth/refresh',
-  async (_, thunkAPI) => {
-    try {
-      const state = thunkAPI.getState();
+// export const refreshOperation = createAsyncThunk(
+//   'auth/refresh',
+//   async (_, thunkAPI) => {
+//     try {
+//       const state = thunkAPI.getState();
 
-      if (state.auth.accessToken) {
-        token.set(state.auth.refreshToken);
-        const response = await getUserRefresh(state.auth.sid);
-        token.set(response.newAccessToken);
-        thunkAPI.dispatch(getUserOperation());
-        return response;
-      } else {
-        return thunkAPI.rejectWithValue();
-      }
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
-    }
-  }
-);
+//       if (state.auth.accessToken) {
+//         token.set(state.auth.refreshToken);
+//         const response = await getUserRefresh(state.auth.sid);
+//         token.set(response.newAccessToken);
+//         thunkAPI.dispatch(getUserOperation());
+//         return response;
+//       } else {
+//         return thunkAPI.rejectWithValue();
+//       }
+//     } catch (error) {
+//       return thunkAPI.rejectWithValue(error.message);
+//     }
+//   }
+// );
