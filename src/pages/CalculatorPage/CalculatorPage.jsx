@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import moment from 'moment';
 import { fetchDailyRatePrivate } from 'redux/Daily-rate/daily-rate-operations';
 import { fetchDaySummary } from 'redux/Day/day-operations';
+import RightSideBar from 'components/RightSideBar/RightSideBar';
 
 export default function CalculatorPage() {
   const dispatch = useDispatch();
@@ -12,13 +13,13 @@ export default function CalculatorPage() {
 
   const handleSubmit = data => {
     dispatch(fetchDailyRatePrivate(data));
-    dispatch(fetchDaySummary({ date }));
   };
 
   return (
     <>
       <Header />
       <DailyCaloriesForm onSubmit={handleSubmit} />
+      <RightSideBar />
     </>
   );
 }

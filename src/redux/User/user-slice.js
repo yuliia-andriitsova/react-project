@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { refreshOperation } from 'redux/Auth/auth-operations';
 import { StatusForAll } from 'redux/Status';
 import { getUserOperation } from './user-operation';
 
@@ -30,12 +29,7 @@ const userSlice = createSlice({
       state.email = action.payload.email;
       state.username = action.payload.username;
       state.id = action.payload.id;
-      state.userData.weight = action.payload.weight;
-      state.userData.height = action.payload.height;
-      state.userData.age = action.payload.bloodType;
-      state.userData.desiredWeight = action.payload.desiredWeight;
-      state.userData.dailyRate = action.payload.dailyRate;
-      state.userData.notAllowedProducts = action.payload.notAllowedProducts;
+      state.userData = action.payload.userData;
     },
     [getUserOperation.rejected](state) {
       state.status = StatusForAll.error;

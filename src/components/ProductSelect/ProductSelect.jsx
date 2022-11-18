@@ -3,7 +3,6 @@ import Loader from 'components/Loader/Loader';
 import PropTypes from 'prop-types';
 import { debounce } from 'lodash';
 import { useMemo, useState } from 'react';
-import Calendar from 'components/DiaryDateСalendar/DiaryDateСalendar';
 
 export const ProductSelect = ({ onSelect }) => {
   const [products, setProducts] = useState([]);

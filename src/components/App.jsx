@@ -9,7 +9,6 @@ import { Route, Routes } from 'react-router-dom';
 import { getUserOperation } from 'redux/User/user-operation';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import PublicRoute from './PublicRoute/PublicRoute';
-import RightSideBar from './RightSideBar/RightSideBar';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -32,7 +31,6 @@ export const App = () => {
           <Route path="/calculator" element={<CalculatorPage />} />
         </Route>
       </Routes>
-      <RightSideBar />
     </>
   );
 };

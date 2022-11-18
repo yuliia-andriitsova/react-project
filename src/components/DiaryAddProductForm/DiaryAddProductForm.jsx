@@ -1,5 +1,3 @@
-import Loader from 'components/Loader/Loader';
-import PropTypes from 'prop-types';
 import Calendar from 'components/DiaryDateСalendar/DiaryDateСalendar';
 import { ProductSelect } from 'components/ProductSelect/ProductSelect';
 import { useEffect, useState } from 'react';

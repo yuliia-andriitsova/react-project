@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { addProduct } from 'services/apiProduct';
+import { addProduct, deleteDayProduct } from 'services/apiProduct';
 
 export const token = {
   set(token) {
@@ -11,27 +11,34 @@ export const token = {
   },
 };
 
-
 export const setProductsData = createAsyncThunk(
   'products/setProduct',
   async (body, thunkApi) => {
     try {
       const data = await addProduct(body);
-      return data;
+      const anotherDay = {
+        date: body.date,
+        ...data,
+      };
+      return anotherDay;
     } catch (e) {
       return thunkApi.rejectWithValue(e.message);
     }
   }
 );
-// export const deleteProductsData = createAsyncThunk(
-//   'products/deleteProduct',
-//   async (id, thunkApi) => {
-//     try {
-//       const { data } = await getProduct(id);
-//       token.unset(data.accessToken);
-//       return data;
-//     } catch (e) {
-//       return thunkApi.rejectWithValue(e.message);
-//     }
-//   }
-// );
+
+export const deleteProductsData = createAsyncThunk(
+  'products/deleteProduct',
+  async (body, thunkApi) => {
+    try {
+      const { newDaySummary } = await deleteDayProduct(body);
+      const newData = {
+        productId: body.eatenProductId,
+        ...newDaySummary,
+      };
+      return newData;
+    } catch (e) {
+      return thunkApi.rejectWithValue(e.message);
+    }
+  }
+);
