@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { getUserOperation } from 'redux/User/user-operation';
-import { getUserRefresh, postLogin, postLogout } from 'services/API';
+import { postLogin, postLogout } from 'services/API';
 
 export const token = {
   set(token) {
@@ -17,6 +17,7 @@ export const loginUserOperation = createAsyncThunk(
     try {
       const response = await postLogin(body);
       token.set(response.accessToken);
+      thunkAPI.dispatch(getUserOperation());
       return response;
     } catch (error) {
       if (error.response.status === 403) {

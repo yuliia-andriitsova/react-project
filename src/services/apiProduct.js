@@ -15,7 +15,7 @@ export const getDayProduct = async () => {
   const { data } = await axios.get('/day');
   return data;
 };
-export const deleteDayProduct = async id => {
-  const { data } = await axios.delete(`/day/${id}`);
+export const deleteDayProduct = async body => {
+  const { data } = await axios.delete('/day', { data: body });
   return data;
 };
