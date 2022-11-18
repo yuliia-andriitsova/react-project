@@ -4,7 +4,7 @@ import { logoutUserOperation } from 'redux/Auth/auth-operations';
 function UserInfo() {
   const dispatch = useDispatch();
 
-  const username = useSelector(state => state.auth.user?.username);
+  const username = useSelector(state => state.user?.username);
   return (
     <div>
       <p>hello {username}</p>

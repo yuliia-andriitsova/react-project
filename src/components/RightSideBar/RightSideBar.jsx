@@ -1,40 +1,32 @@
+import moment from 'moment';
 import React from 'react';
 import { useSelector } from 'react-redux';
-// import { cssTransition } from 'react-toastify';
-import {
-  selectDailyRate,
-  selectNotAllowedProducts,
-} from 'redux/Daily-rate/daily-rate-selectors';
 import css from './RightSideBar.module.css';
+import { selectDaySummary } from 'redux/Product-search/product-search-selectors';
 
 export default function RightSideBar() {
-  const dailyRate = useSelector(selectDailyRate);
-  const notAllowedProducts = useSelector(selectNotAllowedProducts);
+  const daySummary = useSelector(selectDaySummary);
 
   return (
-    <div className={css.RightSideBar}>
-      <h3 className={css.RightSideBarTitle}>Summary for 06/20/2020 'date'</h3>
+    <div>
+      <h3>Summary for {moment(daySummary.date).format('DD/MM/YYYY')}</h3>
       <table>
         <tbody className={css.RightSideBarTable}>
           <tr>
-            <td className={css.RightSideBarTableFirst}>Left</td>
-            <td className={css.RightSideBarTableSecond}>000 'kcalLeft' kcal</td>
+            <td>Left</td>
+            <td>{daySummary.kcalLeft} kcal</td>
           </tr>
           <tr>
-            <td className={css.RightSideBarTableFirst}>Consumed</td>
-            <td className={css.RightSideBarTableSecond}>
-              000 'kcalConsumed' kcal
-            </td>
+            <td>Consumed</td>
+            <td>{daySummary.kcalConsumed} kcal</td>
           </tr>
           <tr>
-            <td className={css.RightSideBarTableFirst}>Daily rate</td>
-            <td className={css.RightSideBarTableSecond}> {dailyRate} kcal</td>
+            <td>Daily rate</td>
+            <td> {daySummary.dailyRate} kcal</td>
           </tr>
           <tr>
-            <td className={css.RightSideBarTableFirst}>n% of normal</td>
-            <td className={css.RightSideBarTableSecond}>
-              000 'percentsOfDailyRate' kcal
-            </td>
+            <td>n% of normal</td>
+            <td>{daySummary.percentsOfDailyRate} kcal</td>
           </tr>
         </tbody>
       </table>
@@ -42,11 +34,11 @@ export default function RightSideBar() {
       <span className={css.RightSideBarText}>
         Your diet will be displayed here
       </span>
-      <ol className={css.ModalListNotEat}>
+      {/* <ol className={css.ModalListNotEat}>
         {notAllowedProducts.map(product => (
           <li key={product}>{product}</li>
         ))}
-      </ol>
+      </ol> */}
     </div>
   );
 }

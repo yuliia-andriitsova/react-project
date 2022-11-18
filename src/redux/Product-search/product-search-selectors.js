@@ -1,1 +1,1 @@
-export const getProductsArr = state => state.products.categories;
+export const selectDaySummary = state => state.day.daySummary;

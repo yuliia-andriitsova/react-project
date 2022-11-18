@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { addProduct, getProduct } from 'services/apiProduct';
+import { addProduct } from 'services/apiProduct';
 
 export const token = {
   set(token) {
@@ -11,38 +11,27 @@ export const token = {
   },
 };
 
-export const getProductsData = createAsyncThunk(
-  'products/getAllProducts',
-  async (product, thunkApi) => {
-    try {
-      const { data } = await getProduct(product);
-      return data;
-    } catch (e) {
-      return thunkApi.rejectWithValue(e.message);
-    }
-  }
-);
+
 export const setProductsData = createAsyncThunk(
   'products/setProduct',
-  async (product, thunkApi) => {
+  async (body, thunkApi) => {
     try {
-      const data = await addProduct(product);
-      console.log('data', data);
+      const data = await addProduct(body);
       return data;
     } catch (e) {
       return thunkApi.rejectWithValue(e.message);
     }
   }
 );
-export const deleteProductsData = createAsyncThunk(
-  'products/deleteProduct',
-  async (id, thunkApi) => {
-    try {
-      const { data } = await getProduct(id);
-      token.unset(data.accessToken);
-      return data;
-    } catch (e) {
-      return thunkApi.rejectWithValue(e.message);
-    }
-  }
-);
+// export const deleteProductsData = createAsyncThunk(
+//   'products/deleteProduct',
+//   async (id, thunkApi) => {
+//     try {
+//       const { data } = await getProduct(id);
+//       token.unset(data.accessToken);
+//       return data;
+//     } catch (e) {
+//       return thunkApi.rejectWithValue(e.message);
+//     }
+//   }
+// );
