@@ -4,7 +4,7 @@ import storage from 'redux-persist/lib/storage';
 import authReducer from './Auth/auth-slice';
 import userReduser from './User/user-slice';
 import { dailyRateReducer } from './Daily-rate/daily-rate-slice';
-import productReducer from './Product-search/product-search-slice.js';
+import { dayReducer } from './Product-search/product-search-slice.js';
 import daySummaryReducer from './Day/day-slice';
 
 const persistRegistrConfig = {
@@ -18,12 +18,15 @@ const persistUserConfig = {
   blacklist: ['status'],
 };
 const persistedUserReducer = persistReducer(persistUserConfig, userReduser);
-const persistedRegistrReducer = persistReducer(persistRegistrConfig, authReducer);
+const persistedRegistrReducer = persistReducer(
+  persistRegistrConfig,
+  authReducer
+);
 
 export const rootReducer = combineReducers({
   auth: persistedRegistrReducer,
   dailyRate: dailyRateReducer,
-  products: productReducer,
+  day: dayReducer,
   daySummary: daySummaryReducer,
   user: persistedUserReducer,
 });

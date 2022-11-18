@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { refreshOperation } from 'redux/Auth/auth-operations';
 import { StatusForAll } from 'redux/Status';
 import { getUserOperation } from './user-operation';
 
@@ -39,6 +40,12 @@ const userSlice = createSlice({
     [getUserOperation.rejected](state) {
       state.status = StatusForAll.error;
     },
+    // [refreshOperation.pending](state) {
+    //   state.status = StatusForAll.loading;
+    // },
+    // [refreshOperation.rejected](state) {
+    //   state.status = StatusForAll.error;
+    // },
   },
 });
 export default userSlice.reducer;

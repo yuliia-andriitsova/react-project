@@ -4,10 +4,10 @@ import 'react-datepicker/dist/react-datepicker.css';
 import ruRU from 'date-fns/locale/ru';
 import { ReactComponent as CalendarIcon } from './calendar.svg';
 import css from './DiaryDateCalendar.module.css';
+import PropTypes from 'prop-types';
+registerLocale('ru-RU', ruRU);
 
-const Calendar = () => {
-  const [startDate, setStartDate] = useState(new Date());
-  registerLocale('ru-RU', ruRU);
+const Calendar = ({ startDate, setStartDate }) => {
   const CustomInput = forwardRef(({ onClick }, ref) => (
     <>
       <span className={css.date} onClick={onClick} ref={ref}>
@@ -29,12 +29,17 @@ const Calendar = () => {
     <div className={css.wrapper}>
       <DatePicker
         selected={startDate}
-        onChange={date => setStartDate(date)}
+        onChange={setStartDate}
         customInput={<CustomInput />}
         maxDate={new Date()}
       />
     </div>
   );
+};
+
+Calendar.propTypes = {
+  startDate: PropTypes.instanceOf(Date).isRequired,
+  setStartDate: PropTypes.func.isRequired,
 };
 
 export default Calendar;

@@ -1,34 +1,45 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { fetchDaySummary } from 'redux/Day/day-operations';
 import { StatusForAll } from 'redux/Status';
-import { getProductsData } from './product-search-operations';
+import { setProductsData } from './product-search-operations';
 
 const initialState = {
-  products: [],
-  _id: null,
-  categories: [],
-  title: {},
-  error: null,
+  id: '',
+  eatenProducts: [],
+  date: '',
+  daySummary: '',
   status: StatusForAll.init,
-}
+};
 
-export const productSearchSlice = createSlice({
-  name: 'products',
+const daySlice = createSlice({
+  name: 'day',
   initialState,
   extraReducers: {
-    [getProductsData.pending](state) {
+    [setProductsData.pending](state) {
       state.status = StatusForAll.loading;
     },
-    [getProductsData.fulfilled](state, action) {
-      state.status = StatusForAll.success;
-      state._id = action.payload._id;
-      state.title = action.payload.title.ua;
-      state.products = action.payload;
+    [setProductsData.fulfilled](state, action) {
+      console.log(action.payload);
+      return { status: StatusForAll.success, ...action.payload.newDay };
     },
-    [getProductsData.rejected](state) { 
-    state.status = StatusForAll.error;
+    [setProductsData.rejected](state) {
+      state.status = StatusForAll.error;
+    },
+    [fetchDaySummary.pending](state) {
+      state.status = StatusForAll.loading;
+    },
+    [fetchDaySummary.fulfilled](state, action) {
+      if (action.payload.eatenProducts) {
+        state.eatenProducts = action.payload.eatenProducts;
+        state.id = action.payload.id;
+        state.date = action.payload.date;
+        state.daySummary = action.payload.daySummary;
+      }
+    },
+    [fetchDaySummary.rejected](state) {
+      state.status = StatusForAll.error;
+    },
   },
-  }
 });
 
-export default productSearchSlice.reducer;
-
+export const dayReducer = daySlice.reducer;
