@@ -1,18 +1,17 @@
 import moment from 'moment';
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { selectDailyRate } from 'redux/Daily-rate/daily-rate-selectors';
+import css from './RightSideBar.module.css';
 import { selectDaySummary } from 'redux/Product-search/product-search-selectors';
 
 export default function RightSideBar() {
-  const dailyRate = useSelector(selectDailyRate);
   const daySummary = useSelector(selectDaySummary);
 
   return (
     <div>
       <h3>Summary for {moment(daySummary.date).format('DD/MM/YYYY')}</h3>
       <table>
-        <tbody>
+        <tbody className={css.RightSideBarTable}>
           <tr>
             <td>Left</td>
             <td>{daySummary.kcalLeft} kcal</td>
@@ -31,6 +30,15 @@ export default function RightSideBar() {
           </tr>
         </tbody>
       </table>
+      <h3 className={css.RightSideBarTitle}>Food not recommended</h3>
+      <span className={css.RightSideBarText}>
+        Your diet will be displayed here
+      </span>
+      {/* <ol className={css.ModalListNotEat}>
+        {notAllowedProducts.map(product => (
+          <li key={product}>{product}</li>
+        ))}
+      </ol> */}
     </div>
   );
 }

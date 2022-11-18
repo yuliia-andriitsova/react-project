@@ -18,7 +18,7 @@ const dailyRateSlice = createSlice({
     [fetchDailyRate.fulfilled](state, action) {
       state.isLoading = false;
       state.dailyRate = action.payload.dailyRate;
-      state.notAllowedProducts = action.payload.notAllowedProducts.slice(0, 10);
+      state.notAllowedProducts = action.payload.notAllowedProducts.slice(0, 5);
     },
 
     [fetchDailyRate.rejected](state, action) {
