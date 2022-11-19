@@ -1,0 +1,35 @@
+.UserInfo {
+  display: flex;
+  align-items: center;
+  margin-top: 35px;
+  margin-right: 16px;
+  position: absolute;
+  right: 0;
+}
+
+.UserBtn {
+  border-color: transparent;
+  background-color: transparent;
+  border-left: 2px solid #e0e0e0;
+  margin-left: 20px;
+  padding-left: 20px;
+
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 0.92;
+  letter-spacing: 0.04em;
+  color: #9b9faa;
+}
+
+.UserInfoText {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 0.92;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  text-align: right;
+}

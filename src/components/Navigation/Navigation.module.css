@@ -5,6 +5,7 @@
   border-left: 2px solid #E0E0E0;
   padding-left: 20px;
   margin-left: 20px;
+  margin-top: 40px;
 }
 
 .navlink {
@@ -20,11 +21,16 @@
 
 .first {
   composes: navlink;
-  color: #212121;
+  color: #9B9FAA;
   margin-right: 16px;
 }
 
-.second {
+/* .second {
   composes: navlink;
-  color: #9B9FAA;;
+  color: #9B9FAA;
+} */
+
+.first:hover,
+.first:focus {
+  color: #212121;
 }

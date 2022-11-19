@@ -13,7 +13,7 @@ export default function Navigation() {
           <NavLink to="/dairy" className={css.first}>
             Diary
           </NavLink>
-          <NavLink to="/calculator" className={css.second}>
+          <NavLink to="/calculator" className={css.first}>
             Calculator
           </NavLink>
         </nav>
@@ -22,7 +22,7 @@ export default function Navigation() {
           <NavLink to="/signin" className={css.first}>
             Sign in
           </NavLink>
-          <NavLink to="/registration" className={css.second}>
+          <NavLink to="/registration" className={css.first}>
             Registration
           </NavLink>
         </nav>

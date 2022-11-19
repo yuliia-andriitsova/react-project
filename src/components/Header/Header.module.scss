@@ -1,5 +1,8 @@
 @import '../../sass/_mixin.scss';
 
 .header {
-  display: flex; 
+  display: flex;
+  padding: 0 16px;
+  margin-top: 80px;
+  position: relative;
 }
