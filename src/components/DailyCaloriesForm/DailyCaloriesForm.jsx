@@ -164,7 +164,9 @@ export default function DailyCaloriesForm({ onSubmit }) {
             placeholder="Number from 20 to 500"
           />
         </div>
-        <button type="submit">Start losing weight</button>
+        <button type="submit" className={css.startLosingBtn}>
+          Start losing weight
+        </button>
       </form>
     </div>
   );
