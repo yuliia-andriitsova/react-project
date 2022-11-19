@@ -18,9 +18,7 @@ export default function MainPage() {
   return (
     <div className={scss.container}>
       <Header />
-      <div className={scss.mainPage}>
-        <DailyCaloriesForm onSubmit={handleSubmit} />
-      </div>
+      <DailyCaloriesForm onSubmit={handleSubmit} />
       {modalState && <Modal onClose={() => setModalState(false)} />}
     </div>
   );

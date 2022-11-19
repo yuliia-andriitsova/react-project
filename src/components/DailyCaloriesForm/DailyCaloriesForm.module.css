@@ -1,6 +1,7 @@
 .DailyCaloriesForm {
   display: block;
   width: 608px;
+  margin-left: 16px;
 }
 
 .title {
