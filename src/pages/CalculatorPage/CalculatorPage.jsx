@@ -17,9 +17,11 @@ export default function CalculatorPage() {
   };
 
   return (
-    <div className={scss.containerPrivate}>
-      <Header />
-      <DailyCaloriesForm onSubmit={handleSubmit} />
+    <div className={scss.calculatorPage}>
+      <div className={scss.containerPrivate}>
+        <Header />
+        <DailyCaloriesForm onSubmit={handleSubmit} />
+      </div>
       <RightSideBar />
     </div>
   );
