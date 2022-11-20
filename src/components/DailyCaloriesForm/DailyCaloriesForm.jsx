@@ -14,19 +14,19 @@ export default function DailyCaloriesForm({ onSubmit }) {
 
     switch (name) {
       case 'weight':
-        setWeight(value);
+        setWeight(Number(value));
         break;
       case 'height':
-        setHeight(value);
+        setHeight(Number(value));
         break;
       case 'age':
-        setAge(value);
+        setAge(Number(value));
         break;
       case 'desiredWeight':
-        setDesireWeight(value);
+        setDesireWeight(Number(value));
         break;
       case 'bloodType':
-        setBloodType(value);
+        setBloodType(Number(value));
         break;
 
       default:
