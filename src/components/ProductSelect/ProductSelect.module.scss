@@ -1,0 +1,43 @@
+@import '../../sass/_mixin.scss';
+.product {
+  @include mob {
+    height: 50px;
+    width: 240px;
+    margin-right: 48px;
+    outline: 0;
+    border: transparent;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: left;
+  }
+  @include tablet {
+    height: 50px;
+    width: 240px;
+    margin-right: 22px;
+    outline: 0;
+    border: transparent;
+    margin-bottom: 60px;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: left;
+  }
+  @include comp {
+    height: 50px;
+    width: 240px;
+    margin-right: 48px;
+    outline: 0;
+    border: transparent;
+    margin-bottom: 60px;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: left;
+  }
+}
+.product::placeholder {
+  font-family: 'Verdana';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: left;
+
+  letter-spacing: 0.04em;
+  color: #9b9faa;
+}
