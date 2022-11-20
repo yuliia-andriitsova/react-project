@@ -51,6 +51,22 @@ export default function Modal({ onClose }) {
             />
           </svg>
         </button>
+        <button className={scss.BackMenu} onClick={onClose}>
+          <svg
+            width="15"
+            height="9"
+            viewBox="0 0 15 9"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M14 1.5V4.5H2M2 4.5L5.5 1M2 4.5L5.5 8"
+              stroke="black"
+              strokeWidth="2"
+            />
+          </svg>
+        </button>
+
         <h2 className={scss.ModalTitle}>
           Your recommended daily <br />
           calorie intake is
@@ -63,7 +79,9 @@ export default function Modal({ onClose }) {
         <h3 className={scss.ModalTitleSecond}>Foods you should not eat</h3>
         <ol className={scss.ModalListNotEat}>
           {notAllowedProducts.map(product => (
-            <li key={product}>{product}</li>
+            <li key={product} className={scss.ModalListNotEatItem}>
+              {product}
+            </li>
           ))}
         </ol>
         <NavLink to="/registration" className={scss.startLosingBtn}>

@@ -7,7 +7,6 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import { getUserOperation } from 'redux/User/user-operation';
-import Modal from './Modal/Modal';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import PublicRoute from './PublicRoute/PublicRoute';
 import scss from './App/App.module.scss';
