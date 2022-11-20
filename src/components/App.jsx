@@ -9,6 +9,7 @@ import { Route, Routes } from 'react-router-dom';
 import { getUserOperation } from 'redux/User/user-operation';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import PublicRoute from './PublicRoute/PublicRoute';
+import scss from './App/App.module.scss';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -18,7 +19,7 @@ export const App = () => {
   }, [dispatch]);
 
   return (
-    <>
+    <div>
       <Routes>
         <Route path="/" element={<PublicRoute />}>
           <Route path="/" element={<MainPage />} />
@@ -26,11 +27,15 @@ export const App = () => {
           <Route path="/registration" element={<RegistrationPage />} />
         </Route>
 
-        <Route path="/" element={<PrivateRoute />}>
+        <Route
+          path="/"
+          element={<PrivateRoute />}
+          className={scss.containerPrivate}
+        >
           <Route path="/dairy" element={<DairyPage />} />
           <Route path="/calculator" element={<CalculatorPage />} />
         </Route>
       </Routes>
-    </>
+    </div>
   );
 };

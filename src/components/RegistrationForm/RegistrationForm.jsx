@@ -2,7 +2,7 @@ import RegisterBtn from 'components/Buttons/RegisterBtn';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { postRegistartionUser } from 'services/API';
-import css from './Registration.module.css';
+import scss from './Registration.module.scss';
 import { loginUserOperation } from '../../redux/Auth/auth-operations';
 // import { toast } from 'react-toastify';
 import { NavLink } from 'react-router-dom';
@@ -30,45 +30,45 @@ const RegistrationForm = () => {
   }
 
   return (
-    <div className={css.registerWrap}>
-      <h2 className={css.registrTitle}>REGISTER</h2>
-      <form onSubmit={handleSubmit} className={css.form}>
-        <div className={css.input}>
-          <label className={css.label}>Name *</label>
+    <div className={scss.registerWrap}>
+      <h2 className={scss.registrTitle}>REGISTER</h2>
+      <form onSubmit={handleSubmit} className={scss.form}>
+        <div className={scss.input}>
+          <label className={scss.label}>Name *</label>
           <input
             type="text"
             name="name"
             value={name}
             onChange={event => setName(event.target.value)}
-            className={css.inputField}
+            className={scss.inputField}
             required
           />
         </div>
-        <div className={css.input}>
-          <label className={css.label}>Email *</label>
+        <div className={scss.input}>
+          <label className={scss.label}>Email *</label>
           <input
             type="email"
             name="email"
             value={email}
             onChange={event => setEmail(event.target.value)}
-            className={css.inputField}
+            className={scss.inputField}
             required
           />
         </div>
 
-        <div className={css.input}>
-          <label className={css.label}>Password *</label>
+        <div className={scss.input}>
+          <label className={scss.label}>Password *</label>
           <input
             type="password"
             name="password"
             value={password}
             onChange={event => setPassword(event.target.value)}
-            className={css.inputField}
+            className={scss.inputField}
             required
           />
         </div>
-        <div className={css.btnWrap}>
-          <NavLink to="/signin" className={css.loginBtn}>
+        <div className={scss.btnWrap}>
+          <NavLink to="/signin" className={scss.loginBtn}>
             Login
           </NavLink>
           <RegisterBtn />
