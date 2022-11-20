@@ -4,6 +4,7 @@ import Modal from 'components/Modal/Modal';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchDailyRate } from 'redux/Daily-rate/daily-rate-operations';
+import scss from './MainPage.module.scss';
 
 export default function MainPage() {
   const [modalState, setModalState] = useState(false);
@@ -15,7 +16,7 @@ export default function MainPage() {
   };
 
   return (
-    <div>
+    <div className={scss.container}>
       <Header />
       <DailyCaloriesForm onSubmit={handleSubmit} />
       {modalState && <Modal onClose={() => setModalState(false)} />}

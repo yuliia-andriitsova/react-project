@@ -6,7 +6,7 @@ import {
   selectDailyRate,
   selectNotAllowedProducts,
 } from 'redux/Daily-rate/daily-rate-selectors';
-import css from './Modal.module.css';
+import scss from './Modal.module.scss';
 
 const modalWindow = document.querySelector('#modal-root');
 
@@ -35,9 +35,9 @@ export default function Modal({ onClose }) {
   };
 
   return createPortal(
-    <div className={css.Overlay} onClick={handleCloseModal}>
-      <div className={css.Modal}>
-        <button type="button" className={css.ModalCloseIcon} onClick={onClose}>
+    <div className={scss.Overlay} onClick={handleCloseModal}>
+      <div className={scss.Modal}>
+        <button type="button" className={scss.ModalCloseIcon} onClick={onClose}>
           <svg
             width="12"
             height="12"
@@ -51,21 +51,40 @@ export default function Modal({ onClose }) {
             />
           </svg>
         </button>
-        <h2 className={css.ModalTitle}>
-          Your recommended daily calorie intake is
+        <button className={scss.BackMenu} onClick={onClose}>
+          <svg
+            width="15"
+            height="9"
+            viewBox="0 0 15 9"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M14 1.5V4.5H2M2 4.5L5.5 1M2 4.5L5.5 8"
+              stroke="black"
+              strokeWidth="2"
+            />
+          </svg>
+        </button>
+
+        <h2 className={scss.ModalTitle}>
+          Your recommended daily <br />
+          calorie intake is
         </h2>
-        <p className={css.ModalLine}>
-          <span className={css.ModalNumberCalories}>{dailyRate}</span>
-          <span className={css.ModalCalories}> kcal</span>
+        <p className={scss.ModalLine}>
+          <span className={scss.ModalNumberCalories}>{dailyRate}</span>
+          <span className={scss.ModalCalories}> kcal</span>
         </p>
         <span></span>
-        <h3 className={css.ModalTitleSecond}>Foods you should not eat</h3>
-        <ol className={css.ModalListNotEat}>
+        <h3 className={scss.ModalTitleSecond}>Foods you should not eat</h3>
+        <ol className={scss.ModalListNotEat}>
           {notAllowedProducts.map(product => (
-            <li key={product}>{product}</li>
+            <li key={product} className={scss.ModalListNotEatItem}>
+              {product}
+            </li>
           ))}
         </ol>
-        <NavLink to="/registration" className={css.startLosingBtn}>
+        <NavLink to="/registration" className={scss.startLosingBtn}>
           Start losing weight
         </NavLink>
       </div>
