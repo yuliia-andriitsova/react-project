@@ -45,7 +45,8 @@ const daySlice = createSlice({
       console.log(action.payload);
       state.eatenProducts = action.payload.eatenProducts || [];
       state.id = action.payload.id || '';
-      state.date = action.payload.date || state.date;
+      state.date =
+        action.payload.date || action.payload.newSummary?.date || state.date;
       state.daySummary.kcalLeft =
         action.payload?.daySummary?.kcalLeft || action.payload?.kcalLeft;
       state.daySummary.kcalConsumed =
