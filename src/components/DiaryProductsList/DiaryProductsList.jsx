@@ -5,7 +5,7 @@ import {
   selectDayID,
   selectEatenProducts,
 } from 'redux/Product-search/product-search-selectors';
-
+import scss from './DiaryProductsList.module.scss';
 export default function DiaryProductsList() {
   const eatenProducts = useSelector(selectEatenProducts);
   const dayId = useSelector(selectDayID);
@@ -16,17 +16,21 @@ export default function DiaryProductsList() {
   };
 
   return (
-    <ul>
+    <div className={scss.container}>
       {eatenProducts.map(eatenProduct => (
-        <li key={eatenProduct.id}>
-          <span>{eatenProduct.title}</span>
-          <span>{eatenProduct.weight} g</span>
-          <span>{Math.round(eatenProduct.kcal)} kcal</span>
-          <button type="button" onClick={() => handleDelete(eatenProduct.id)}>
+        <ul className={scss.list} key={eatenProduct.id}>
+          <li className={scss.item}>{eatenProduct.title}</li>
+          <li className={scss.item}>{eatenProduct.weight} g</li>
+          <li className={scss.item}>{Math.round(eatenProduct.kcal)} kcal</li>
+          <button
+            className={scss.button}
+            type="button"
+            onClick={() => handleDelete(eatenProduct.id)}
+          >
             <svg
-              width="14"
-              height="14"
-              viewBox="0 0 14 14"
+              width="12"
+              height="12"
+              viewBox="0 0 12 12"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -34,8 +38,8 @@ export default function DiaryProductsList() {
               <path d="M1 13L13 0.999999" stroke="#9B9FAA" strokeWidth="2" />
             </svg>
           </button>
-        </li>
+        </ul>
       ))}
-    </ul>
+    </div>
   );
 }

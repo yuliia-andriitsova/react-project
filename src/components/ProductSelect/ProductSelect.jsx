@@ -3,6 +3,7 @@ import Loader from 'components/Loader/Loader';
 import PropTypes from 'prop-types';
 import { debounce } from 'lodash';
 import { useMemo, useState } from 'react';
+import scss from './ProductSelect.module.scss';
 
 export const ProductSelect = ({ onSelect }) => {
   const [products, setProducts] = useState([]);
@@ -46,8 +47,9 @@ export const ProductSelect = ({ onSelect }) => {
   return (
     <>
       <input
+        className={scss.product}
         type="text"
-        placeholder="Search product"
+        placeholder="Enter product name "
         value={productValue ?? ''}
         onChange={handleChangeProduct}
       />
