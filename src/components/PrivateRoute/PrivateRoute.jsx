@@ -12,5 +12,5 @@ export default function PrivateRoute() {
   if (status === StatusForAll.init || status === StatusForAll.loading) {
     return <p>Loading...</p>;
   }
-  return token ? <Outlet /> : <Navigate to="/signin" />;
+  return token ? <Outlet /> : <Navigate to="/" />;
 }

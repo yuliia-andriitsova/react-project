@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { setProductsData } from 'redux/Product-search/product-search-operations';
 import { fetchDaySummary } from 'redux/Day/day-operations';
 import moment from 'moment';
+import scss from './DairyAddProductForm.module.scss';
 
 export const DiaryAddProductForm = () => {
   const [productId, setProductId] = useState('');
@@ -34,16 +35,17 @@ export const DiaryAddProductForm = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className={scss.form}>
         <Calendar startDate={startDate} setStartDate={setStartDate} />
         <ProductSelect onSelect={setProductId} />
         <input
+          className={scss.weight}
           type="number"
-          placeholder="weight"
+          placeholder="Grams"
           value={productWeight ?? ''}
           onChange={handleChangeWeight}
         />
-        <button type="submit">
+        <button type="submit" className={scss.btn}>
           <svg
             width="14"
             height="14"
