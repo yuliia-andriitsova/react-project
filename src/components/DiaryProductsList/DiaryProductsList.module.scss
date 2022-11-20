@@ -8,24 +8,14 @@
   @include tablet {
     max-height: 271px;
     width: 610px;
-    overflow-y: scroll;
   }
   @include comp {
     max-height: 271px;
     width: 623px;
-    overflow-y: scroll;
   }
 }
 .container::-webkit-scrollbar {
   @include mob {
-    width: 6px;
-    background-color: #264061;
-  }
-  @include tablet {
-    width: 6px;
-    background-color: #264061;
-  }
-  @include comp {
     width: 6px;
     background-color: #264061;
   }
@@ -35,28 +25,9 @@
     border-radius: 6px;
     background-color: #18aaaa;
   }
-
-  @include tablet {
-    border-radius: 6px;
-    background-color: #18aaaa;
-  }
-  @include comp {
-    border-radius: 6px;
-    background-color: #18aaaa;
-  }
 }
 .container::-webkit-scrollbar-track {
   @include mob {
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
-    border-radius: 6px;
-    background-color: #f9f9fd;
-  }
-  @include tablet {
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
-    border-radius: 6px;
-    background-color: #f9f9fd;
-  }
-  @include comp {
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
     border-radius: 6px;
     background-color: #f9f9fd;
@@ -76,35 +47,6 @@
     font-size: 11px;
     line-height: 17px;
     letter-spacing: 0.04em;
-
-    color: #212121;
-  }
-  @include tablet {
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    font-family: 'Verdana';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
-    letter-spacing: 0.04em;
-
-    color: #212121;
-  }
-  @include comp {
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    font-family: 'Verdana';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
-    letter-spacing: 0.04em;
-
     color: #212121;
   }
 }
@@ -114,19 +56,15 @@
     margin-bottom: 16px;
     border-bottom: 1px solid #e0e0e0;
     margin-right: 8px;
-    max-width: 130px;
-    height: 40px;
+    width: 130px;
+    height: 24px;
   }
   @include tablet {
-    margin-bottom: 16px;
-    border-bottom: 1px solid #e0e0e0;
     margin-right: 22px;
     min-width: 240px;
     height: 40px;
   }
   @include comp {
-    margin-bottom: 16px;
-    border-bottom: 1px solid #e0e0e0;
     margin-right: 48px;
     min-width: 240px;
     height: 40px;
@@ -138,20 +76,16 @@
     margin-bottom: 16px;
     border-bottom: 1px solid #e0e0e0;
     margin-right: 8px;
-    max-width: 49px;
-    text-align: end;
+    width: 49px;
+    text-align: center;
   }
   @include tablet {
-    margin-bottom: 16px;
-    border-bottom: 1px solid #e0e0e0;
     margin-right: 46px;
     min-width: 107px;
     text-align: end;
   }
 
   @include comp {
-    margin-bottom: 16px;
-    border-bottom: 1px solid #e0e0e0;
     margin-right: 32px;
     min-width: 107px;
     text-align: end;
@@ -161,21 +95,11 @@
   @include mob {
     margin-bottom: 16px;
     border-bottom: 1px solid #e0e0e0;
-    margin-right: 8px;
-    max-width: 49px;
-    text-align: end;
+    margin-right: 17px;
+    width: 58px;
+    text-align: center;
   }
   @include tablet {
-    margin-bottom: 16px;
-    border-bottom: 1px solid #e0e0e0;
-    margin-right: 32px;
-    min-width: 107px;
-    text-align: end;
-  }
-
-  @include comp {
-    margin-bottom: 16px;
-    border-bottom: 1px solid #e0e0e0;
     margin-right: 32px;
     min-width: 107px;
     text-align: end;
@@ -183,7 +107,7 @@
 }
 .button {
   @include mob {
-    margin-right: 17px;
+    margin-right: 14px;
     margin-bottom: 16px;
     border-color: transparent;
     background-color: transparent;
@@ -193,17 +117,5 @@
   @include tablet {
     margin-right: 34px;
     margin-bottom: 16px;
-    border-color: transparent;
-    background-color: transparent;
-    border: none;
-    padding: 0;
-  }
-  @include comp {
-    padding: 0;
-    border-color: transparent;
-    background-color: transparent;
-    margin-bottom: 16px;
-    margin-right: 34px;
-    border: none;
   }
 }

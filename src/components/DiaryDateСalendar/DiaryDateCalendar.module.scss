@@ -1,17 +1,33 @@
+@import '../../sass/_mixin.scss';
 .wrapper {
-  display: flex;
-  align-items: center;
-  margin-bottom: 60px;
+  @include mob {
+    display: flex;
+    align-items: center;
+  }
+  @include tablet {
+    margin-bottom: 60px;
+  }
+  @include comp {
+    margin-bottom: 60px;
+  }
 }
 
 .date {
-  margin-right: 20px;
-  font-family: var(--secondary-font);
-  font-weight: 700;
-  font-size: 34px;
-  line-height: 1.2;
-  color: var(--black);
-  cursor: pointer;
+  @include mob {
+    margin-right: 20px;
+    font-family: var(--secondary-font);
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.2;
+    color: var(--black);
+    cursor: pointer;
+  }
+  @include tablet {
+    font-size: 34px;
+  }
+  @include comp {
+    font-size: 34px;
+  }
 }
 
 .date:hover,
@@ -22,6 +38,7 @@
 
 .icon {
   cursor: pointer;
+
   fill: var(--text-gray);
 }
 
