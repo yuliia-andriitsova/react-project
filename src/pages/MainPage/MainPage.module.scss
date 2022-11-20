@@ -9,6 +9,9 @@
 
   @media screen and (min-width: 200px) and (max-width: 767px) {
     .container {
+      padding-top: 20px;
+      padding-left: 20px;
+      padding-right: 20px;
       background-image: none;
     }
    }
@@ -21,6 +24,8 @@
              (min-resolution: 192dpi),
              (min-resolution: 2dppx) {
               .container {
+                  padding-top: 20px;
+                  padding-left: 32px;
                   background-size: 768px 602px;
                   background-image: url(../../assets/images/fruits/fruits-tab-2x.png);
                 }
@@ -36,6 +41,8 @@
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
       .container {
+        padding-top: 80px;
+        padding-left: 16px;
         background-size: 980px 850px;
         background-image: url(../../assets/images/fruits/fruits-comp-2x.png);
       }

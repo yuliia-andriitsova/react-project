@@ -18,8 +18,16 @@
 
 .form {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+}
+
+.firstColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.secondColumn {
+  display: flex;
+  flex-direction: column;
 }
 
 .element {
@@ -39,6 +47,20 @@
   color: var(--text-gray);
 }
 
+.labelLastChild {
+  font-family: var(--secondary-font);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.21;
+  letter-spacing: 0.04em;
+
+  color: var(--text-gray);
+  margin-top: 0;
+  margin-bottom: 8px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--decoration-gray);
+} 
 
 .input {
   width: 240px;
@@ -51,13 +73,13 @@
   margin-bottom: 40px;
 }
 
-input:invalid {
+/* input:invalid {
   box-shadow: 0 0 5px 1px rgba(255, 0, 0, 0.373);
 }
 
 input:focus:invalid {
   box-shadow: none;
-}
+} */
 
 .radioGroup {
   display: flex;
@@ -130,6 +152,7 @@ input:focus:invalid {
   border-color: transparent;
   cursor: pointer;
   margin-left: 339px;
+  margin-top: 20px;
 }
 
 .btn:hover,
@@ -142,4 +165,58 @@ input:focus:invalid {
   composes: btn;
   width: 210px;
   padding: 13px 25px;
+}
+
+
+@media screen and (min-width: 200px) and (max-width: 767px) {
+  .title {
+    font-size: 18px;
+    line-height: 26px;
+    margin-bottom: 32px;
+    margin-top: 32px;
+  }
+
+  .form {
+    flex-direction: column;
+  }
+
+  .element {
+    position: relative;
+    flex-direction: row;
+    margin-right: 0px;
+  }
+
+  .label {
+   position: absolute;
+   top: -5px;
+   left: 0;
+  }
+
+  .labelLastChild {
+  margin-top: 0;
+  margin-bottom: 0;
+  position: absolute;
+  top: -20px;
+  left: 0;
+  border-bottom: 1px solid transparent;
+  }
+  
+  .input {
+  margin-bottom: 32px;
+  }
+
+  .btn {
+    margin-left: 35px;
+    margin-top: 40px;
+  }
+
+  .radioGroup {
+    margin-top: 16px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .btn {
+    margin-left: 0;
+  }
 }

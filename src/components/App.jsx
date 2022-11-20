@@ -19,7 +19,7 @@ export const App = () => {
   }, [dispatch]);
 
   return (
-    <div className={scss.container}>
+    <div>
       <Routes>
         <Route path="/" element={<PublicRoute />}>
           <Route path="/" element={<MainPage />} />
@@ -27,7 +27,11 @@ export const App = () => {
           <Route path="/registration" element={<RegistrationPage />} />
         </Route>
 
-        <Route path="/" element={<PrivateRoute />}>
+        <Route
+          path="/"
+          element={<PrivateRoute />}
+          className={scss.containerPrivate}
+        >
           <Route path="/dairy" element={<DairyPage />} />
           <Route path="/calculator" element={<CalculatorPage />} />
         </Route>
