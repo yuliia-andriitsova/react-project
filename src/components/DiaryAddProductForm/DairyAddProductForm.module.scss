@@ -1,0 +1,75 @@
+@import '../../sass/_mixin.scss';
+.weight {
+  @include mob {
+    height: 50px;
+    outline: 0;
+    border: transparent;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+    width: 107px;
+    margin-right: 60px;
+  }
+  @include tablet {
+    margin-bottom: 60px;
+    margin-right: 87px;
+  }
+  @include comp {
+    margin-right: 60px;
+  }
+}
+
+.weight::placeholder {
+  @include mob {
+    font-family: 'Verdana';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #9b9faa;
+  }
+  @include tablet {
+    text-align: right;
+  }
+}
+.form {
+  @include mob {
+    margin-top: 40px;
+    width: 320px;
+  }
+  @include tablet {
+    margin-top: 130px;
+    width: 610px;
+  }
+  @include comp {
+    margin-top: 147px;
+    width: 623px;
+  }
+}
+
+.btn {
+  @include mob {
+    border: 1px solid transparent;
+    border-radius: 50%;
+    background-color: #fc842d;
+    width: 48px;
+    height: 48px;
+    opacity: 0.6;
+    transition: 250 ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+}
+.btn:hover {
+  opacity: 1;
+  box-shadow: 0px 4px 10px rgba(252, 132, 45, 0.5);
+}
+.inputAll {
+  @include mob {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  @include tablet {
+    display: flex;
+    flex-direction: row;
+  }
+}
