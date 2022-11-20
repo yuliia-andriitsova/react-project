@@ -1,12 +1,8 @@
-.loginWrap {
-  padding-left: 20px;
-  padding-right: 20px;
-}
-.loginTitle {
+.registrTitle {
   font-family: var(----primary-font);
   font-weight: 700;
   font-size: 14px;
-  line-height: 0.9;
+  line-height: 1.21;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--orange);
@@ -36,7 +32,7 @@
 
 .inputField {
   font-family: var(--secondary-font);
-  width: 240px;
+  width: 280px;
   height: 20px;
   border-top: 0px;
   border-left: 0px;
@@ -44,9 +40,23 @@
   border-bottom: 1px solid var(--decoration-gray);
 }
 
+@media screen and (min-width: 768px) {
+  .inputField {
+    width: 240px;
+  }
+}
+
 .btnWrap {
   display: flex;
-  gap: 32px;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .btnWrap {
+    flex-direction: row;
+    gap: 32px;
+  }
 }
 
 .btn {
@@ -63,18 +73,14 @@
 
 .btn:hover,
 .btn:focus {
-    box-shadow: 0px 4px 10px rgba(252, 132, 45, 0.5);
-    transition: all 250ms linear;
+  box-shadow: 0px 4px 10px rgba(252, 132, 45, 0.5);
+  transition: all 250ms linear;
 }
 
-.registerBtn {
+.loginBtn {
   composes: btn;
   text-decoration: none;
   text-align: center;
-  background-color: var(--white-text);
-  color: var(--orange);
-  border: 2px solid #fc842d;
   width: 181px;
-  padding: 13px 37px;
-  box-shadow: none;
+  padding: 13px 51px;
 }

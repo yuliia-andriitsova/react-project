@@ -10,7 +10,7 @@ export default function RightSideBar() {
   const notAllowedProducts = useSelector(selectnotAllowedProducts);
 
   return (
-    <div className={scss.container}>
+      <div className={scss.container}>
       <div className={scss.rightSideBarWrap}>
         <h3 className={scss.rightSideBarTitle}>
           Summary for {moment(daySummary.date).format('DD/MM/YYYY')}
@@ -50,5 +50,6 @@ export default function RightSideBar() {
         </ul>
       </div>
     </div>
+     
   );
 }

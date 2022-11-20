@@ -12,11 +12,40 @@
   .container {
       display: flex;
       flex-direction: row;
+      justify-content: space-evenly;
+      position: relative;
       gap: 71px;
       padding: 80px 32px;
-
+      background-image: url(../../assets/images/sideBar/leaves-1x-768.png);
+      background-repeat: no-repeat;
+      background-position: right bottom;
     }
-  
+        @media (min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
+          .container {
+            background-image: url(../../assets/images/sideBar/leaves-2x-768.png);
+          }
+        }
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    width: 517px;
+    flex-direction: column;
+    gap: 60px;
+    padding-left: 106px;
+    padding-right: 123px;
+    background-image: url(../../assets/images/sideBar/leaves-1x-1280.png);
+  }
+
+     @media (min-device-pixel-ratio: 2),
+     (min-resolution: 192dpi),
+     (min-resolution: 2dppx) {
+       .container {
+         background-image: url(../../assets/images/sideBar/leaves-2x-1280.png);
+       }
+     }
 }
 
 .rightSideBarTitle {
