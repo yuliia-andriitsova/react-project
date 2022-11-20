@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { logoutUserOperation } from 'redux/Auth/auth-operations';
+import burgerMenu from '../../assets/images/burger-back/burger-menu.svg';
 import s from './Userinfo.module.scss';
 
 function UserInfo() {
@@ -16,6 +17,9 @@ function UserInfo() {
       >
         Exit
       </button>
+      <picture>
+        <img src={burgerMenu} alt="burgerMenu" className={s.burgerMenu} />
+      </picture>
     </div>
   );
 }

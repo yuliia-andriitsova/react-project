@@ -1,10 +1,22 @@
+@import '../../sass/_mixin.scss';
+
 .UserInfo {
-  display: flex;
-  align-items: center;
-  margin-top: 35px;
-  margin-right: 16px;
-  position: absolute;
-  right: 0;
+  @include mob {
+    position: absolute;
+    right: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  @include tablet {
+    margin-top: 0px;
+    margin-right: 20px;
+  }
+
+  @include comp {
+    margin-top: 35px;
+    margin-right: 16px;
+  }
 }
 
 .UserBtn {
@@ -33,4 +45,18 @@
   letter-spacing: 0.04em;
   text-decoration: none;
   text-align: right;
+}
+
+.burgerMenu {
+  @include mob {
+    display: flex;
+  }
+
+  @include tablet {
+    margin-left: 50px;
+  }
+
+  @include comp {
+    display: none;
+  }
 }
