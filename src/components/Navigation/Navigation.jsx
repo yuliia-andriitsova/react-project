@@ -9,13 +9,15 @@ export default function Navigation() {
   return (
     <>
       {token ? (
-        <nav className={css.navigation}>
-          <NavLink to="/dairy" className={css.first}>
-            Diary
-          </NavLink>
-          <NavLink to="/calculator" className={css.first}>
-            Calculator
-          </NavLink>
+        <nav className={css.navigationBackColor}>
+          <div className={css.navigation}>
+            <NavLink to="/dairy" className={css.first}>
+              Diary
+            </NavLink>
+            <NavLink to="/calculator" className={css.first}>
+              Calculator
+            </NavLink>
+          </div>
         </nav>
       ) : (
         <nav className={css.navigation}>
