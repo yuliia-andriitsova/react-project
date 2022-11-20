@@ -1,0 +1,145 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 43px;
+  background-color: var(--secondary-bg-color);
+}
+
+@media screen and (min-width: 768px){
+  .container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      position: relative;
+      gap: 71px;
+      padding: 80px 32px;
+      background-image: url(../../assets/images/sideBar/leaves-1x-768.png);
+      background-repeat: no-repeat;
+      background-position: right bottom;
+    }
+        @media (min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
+          .container {
+            background-image: url(../../assets/images/sideBar/leaves-2x-768.png);
+          }
+        }
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    width: 517px;
+    flex-direction: column;
+    gap: 60px;
+    padding-left: 106px;
+    padding-right: 123px;
+    background-image: url(../../assets/images/sideBar/leaves-1x-1280.png);
+  }
+
+     @media (min-device-pixel-ratio: 2),
+     (min-resolution: 192dpi),
+     (min-resolution: 2dppx) {
+       .container {
+         background-image: url(../../assets/images/sideBar/leaves-2x-1280.png);
+       }
+     }
+}
+
+.rightSideBarTitle {
+  font-family: var(----secondary-font);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.21;
+  letter-spacing: 0.04em;
+  color: var(--black);
+  margin: 0 0 20px;
+}
+
+.rightSideBarList {
+  padding: 0;
+}
+
+.rightSideBarItem {
+  display: flex;
+  justify-content: space-between;
+}
+
+.rightSideBarItem:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.itemText {
+  font-family: var(----secondary-font);
+  font-size: 14px;
+  line-height: 1.21;
+  letter-spacing: 0.04em;
+  color: var(--text-gray);
+}
+
+
+.notAllowedProductsList {
+  padding: 0;
+  list-style: none;
+}
+/* .title {
+  font-family: var(----secondary-font);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.21;
+    letter-spacing: 0.04em;
+    color: var(--black);
+    margin-bottom: 20px;
+}
+
+.RightSideBar {
+  background: var(--secondary-bg-color);
+  font-family: 'Arimo';
+  padding-left: 94px;
+}
+
+.RightSideBarTitle {
+  width: 330px;
+  height: 17px;
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.21;
+  letter-spacing: 0.04em;
+
+  color: #212121;
+}
+
+.RightSideBarTable {
+  margin-top: 20px;
+  margin-bottom: 60px;
+  margin-left: 64px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.21;
+  letter-spacing: 0.04em;
+
+  color: var(--text-gray);
+}
+
+.tableRaw {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.RightSideBarTableFirst {
+  width: 182px;
+}
+
+.RightSideBarTableSecond {
+  width: 88px;
+  text-align: end;
+}
+
+.RightSideBarText {
+  composes: RightSideBarTable;
+} */
