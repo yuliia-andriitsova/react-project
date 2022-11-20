@@ -1,5 +1,23 @@
 @import '../../sass/_mixin.scss';
 
 .header {
-  display: flex; 
+  @include mob {
+    justify-content: space-between;
+    border-bottom: 2px solid #e0e0e0;
+    box-shadow: 0px 1px 10px 0px rgba(233, 229, 229, 0.747);
+    display: flex;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1279) {
+    justify-content: space-between;
+    border-bottom: 2px solid #e0e0e0;
+    box-shadow: 0px 1px 10px 0px rgba(233, 229, 229, 0.747);
+    display: flex;
+  }
+  @include comp {
+    position: relative;
+    display: flex;
+    justify-content: start;
+    box-shadow: none;
+    border-bottom: none;
+  }
 }

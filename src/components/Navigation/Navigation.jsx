@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { getToken } from 'redux/Auth/auth-selectors';
-import css from './Navigation.module.css';
+import css from './Navigation.module.scss';
 
 export default function Navigation() {
   const token = useSelector(getToken);
@@ -13,13 +13,13 @@ export default function Navigation() {
           <NavLink to="/dairy" className={css.first}>
             Diary
           </NavLink>
-          <NavLink to="/calculator" className={css.second}>
+          <NavLink to="/calculator" className={css.first}>
             Calculator
           </NavLink>
         </nav>
       ) : (
         <nav className={css.navigation}>
-          <NavLink to="/signin" className={css.first}>
+          <NavLink to="/signin" className={css.second}>
             Sign in
           </NavLink>
           <NavLink to="/registration" className={css.second}>

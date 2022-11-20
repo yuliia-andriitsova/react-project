@@ -1,0 +1,62 @@
+@import '../../sass/_mixin.scss';
+
+.UserInfo {
+  @include mob {
+    position: absolute;
+    right: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  @include tablet {
+    margin-top: 0px;
+    margin-right: 20px;
+  }
+
+  @include comp {
+    margin-top: 35px;
+    margin-right: 16px;
+  }
+}
+
+.UserBtn {
+  border-color: transparent;
+  background-color: transparent;
+  height: 32px;
+  border-left: 2px solid #e0e0e0;
+  margin-left: 20px;
+  padding-left: 20px;
+
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 0.92;
+  letter-spacing: 0.04em;
+  color: #9b9faa;
+}
+
+.UserInfoText {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 0.92;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  text-align: right;
+}
+
+.burgerMenu {
+  @include mob {
+    display: flex;
+  }
+
+  @include tablet {
+    margin-left: 50px;
+  }
+
+  @include comp {
+    display: none;
+  }
+}

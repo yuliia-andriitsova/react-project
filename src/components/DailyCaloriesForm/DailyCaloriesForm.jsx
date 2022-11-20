@@ -143,6 +143,7 @@ export default function DailyCaloriesForm({ onSubmit }) {
                     name="bloodType"
                     value="2"
                     onChange={handleChangeInput}
+                    className={css.inputRadio}
                   />
                   <label htmlFor="bloodType2" className={css.radio}>
                     2
@@ -153,6 +154,7 @@ export default function DailyCaloriesForm({ onSubmit }) {
                     name="bloodType"
                     value="3"
                     onChange={handleChangeInput}
+                    className={css.inputRadio}
                   />
                   <label htmlFor="bloodType3" className={css.radio}>
                     3
@@ -162,6 +164,7 @@ export default function DailyCaloriesForm({ onSubmit }) {
                     id="bloodType4"
                     name="bloodType"
                     value="4"
+                    className={css.inputRadio}
                     onChange={handleChangeInput}
                   />
                   <label htmlFor="bloodType4" className={css.radio}>
