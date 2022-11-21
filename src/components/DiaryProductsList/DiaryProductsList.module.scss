@@ -8,10 +8,12 @@
   @include tablet {
     max-height: 271px;
     width: 610px;
+    margin-bottom: 55px;
   }
   @include comp {
     max-height: 271px;
     width: 623px;
+    margin-bottom: 0px;
   }
 }
 .container::-webkit-scrollbar {
