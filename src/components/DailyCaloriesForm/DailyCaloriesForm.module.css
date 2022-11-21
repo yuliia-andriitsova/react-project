@@ -220,5 +220,6 @@ input:focus:invalid {
 @media screen and (min-width: 768px) and (max-width: 1279px) {
   .btn {
     margin-left: 0;
+    margin-bottom: 48px;
   }
 }
