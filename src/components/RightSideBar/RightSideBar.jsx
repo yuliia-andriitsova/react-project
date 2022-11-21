@@ -37,7 +37,7 @@ export default function RightSideBar() {
           <li className={scss.rightSideBarItem}>
             <span className={scss.itemText}>n% of normal</span>
             <span className={scss.itemText}>
-              {Math.round(daySummary.percentsOfDailyRate)} kcal
+              {Math.round(daySummary.percentsOfDailyRate)} %
             </span>
           </li>
         </ul>
