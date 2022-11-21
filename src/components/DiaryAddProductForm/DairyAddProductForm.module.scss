@@ -41,6 +41,7 @@
   @include tablet {
     margin-top: 130px;
     width: 610px;
+    margin-top: 60px;
   }
   @include comp {
     margin-top: 147px;
@@ -77,14 +78,14 @@
 
 .firstColumn {
   @include tablet {
-      display: flex;
-      flex-direction: column;
-    }
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .secondColumn {
-    @include tablet {
-      display: flex;
-      flex-direction: row;
-    }
+  @include tablet {
+    display: flex;
+    flex-direction: row;
+  }
 }

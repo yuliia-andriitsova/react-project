@@ -25,13 +25,12 @@ export default function RightSideBar() {
           <li className={scss.rightSideBarItem}>
             <span className={scss.itemText}>Consumed</span>
             <span className={scss.itemText}>
-              {daySummary.kcalConsumed} kcal
+              {Math.round(daySummary.kcalConsumed)} kcal
             </span>
           </li>
           <li className={scss.rightSideBarItem}>
             <span className={scss.itemText}>Daily rate</span>
             <span className={scss.itemText}>
-              {' '}
               {Math.round(daySummary.dailyRate)} kcal
             </span>
           </li>

@@ -11,6 +11,7 @@ export const DiaryAddProductForm = () => {
   const [productId, setProductId] = useState('');
   const [productWeight, setProductWeight] = useState('');
   const [startDate, setStartDate] = useState(new Date());
+  const [productValue, setProductValue] = useState('');
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -31,6 +32,8 @@ export const DiaryAddProductForm = () => {
         weight: productWeight,
       })
     );
+    setProductValue('');
+    setProductWeight('');
   };
 
   return (
@@ -39,7 +42,11 @@ export const DiaryAddProductForm = () => {
         <Calendar startDate={startDate} setStartDate={setStartDate} />
         <div className={scss.inputAll}>
           <div className={scss.firstColumn}>
-            <ProductSelect onSelect={setProductId} />
+            <ProductSelect
+              productValue={productValue}
+              setProductValue={setProductValue}
+              onSelect={setProductId}
+            />
           </div>
 
           <div className={scss.secondColumn}>
@@ -51,7 +58,11 @@ export const DiaryAddProductForm = () => {
               onChange={handleChangeWeight}
             />
 
-            <button type="submit" className={scss.btn}>
+            <button
+              type="submit"
+              disabled={!productId || !productWeight}
+              className={scss.btn}
+            >
               <svg
                 width="14"
                 height="14"

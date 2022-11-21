@@ -1,6 +1,6 @@
 import DailyCaloriesForm from 'components/DailyCaloriesForm/DailyCaloriesForm';
 import Header from 'components/Header/Header';
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import moment from 'moment';
 import { fetchDailyRatePrivate } from 'redux/Daily-rate/daily-rate-operations';
@@ -10,7 +10,11 @@ import scss from './CalculatorPage.module.scss';
 
 export default function CalculatorPage() {
   const dispatch = useDispatch();
-  const [date, setDate] = useState(moment(new Date()).format('YYYY-MM-DD'));
+  useEffect(() => {
+    dispatch(
+      fetchDaySummary({ date: moment(new Date()).format('YYYY-MM-DD') })
+    );
+  }, [dispatch]);
 
   const handleSubmit = data => {
     dispatch(fetchDailyRatePrivate(data));
