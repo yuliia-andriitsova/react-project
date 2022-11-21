@@ -10,7 +10,7 @@ export default function RightSideBar() {
   const notAllowedProducts = useSelector(selectnotAllowedProducts);
 
   return (
-      <div className={scss.container}>
+    <div className={scss.container}>
       <div className={scss.rightSideBarWrap}>
         <h3 className={scss.rightSideBarTitle}>
           Summary for {moment(daySummary.date).format('DD/MM/YYYY')}
@@ -18,7 +18,9 @@ export default function RightSideBar() {
         <ul className={scss.rightSideBarList}>
           <li className={scss.rightSideBarItem}>
             <span className={scss.itemText}>Left</span>
-            <span className={scss.itemText}>{daySummary.kcalLeft} kcal</span>
+            <span className={scss.itemText}>
+              {Math.round(daySummary.kcalLeft)} kcal
+            </span>
           </li>
           <li className={scss.rightSideBarItem}>
             <span className={scss.itemText}>Consumed</span>
@@ -28,12 +30,15 @@ export default function RightSideBar() {
           </li>
           <li className={scss.rightSideBarItem}>
             <span className={scss.itemText}>Daily rate</span>
-            <span className={scss.itemText}> {daySummary.dailyRate} kcal</span>
+            <span className={scss.itemText}>
+              {' '}
+              {Math.round(daySummary.dailyRate)} kcal
+            </span>
           </li>
           <li className={scss.rightSideBarItem}>
             <span className={scss.itemText}>n% of normal</span>
             <span className={scss.itemText}>
-              {daySummary.percentsOfDailyRate} kcal
+              {Math.round(daySummary.percentsOfDailyRate)} kcal
             </span>
           </li>
         </ul>
@@ -50,6 +55,5 @@ export default function RightSideBar() {
         </ul>
       </div>
     </div>
-     
   );
 }
