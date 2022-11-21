@@ -34,7 +34,7 @@
     gap: 60px;
     padding-left: 106px;
     padding-right: 123px;
-    padding-top: 292px;
+    padding-top: 149px;
     margin: 0;
     background-image: url(../../assets/images/sideBar/leaves-1x-1280.png);
     @media (min-device-pixel-ratio: 2),
@@ -63,15 +63,14 @@
 
 .rightSideBarItem {
   @include mob {
-  display: flex;
-  justify-content: space-between;
-  width: 285px;
+    display: flex;
+    justify-content: space-between;
+    width: 285px;
   }
 
-    @include tablet {
-  width: 288px;
-     }
-
+  @include tablet {
+    width: 288px;
+  }
 }
 
 .rightSideBarItem:not(:last-child) {
@@ -99,8 +98,6 @@
 
 //     }
 
-
-  
 // }
 
 .notAllowedProductsList {

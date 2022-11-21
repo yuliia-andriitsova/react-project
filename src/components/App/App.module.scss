@@ -1,3 +1,4 @@
+@import '../../styles/vars.css';
 .containerPrivate {
   padding-top: 20px;
   padding-left: 20px;
@@ -57,10 +58,12 @@
 }
 
 .backgraundImg {
+  min-height: 100vh;
   background-repeat: no-repeat;
-  background-position: top right;
+  background-position: top right, bottom right;
   background-size: 980px 850px;
-  background-image: url(../../assets/images/fruits/fruits-comp-1x.png);
+  background-image: url(../../assets/images/fruits/fruts-comp-1x.png),
+    url(../../assets/images/fruits/backgrond.png);
 
   @media screen and (min-width: 200px) and (max-width: 767px) {
     background-image: none;
@@ -68,23 +71,38 @@
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     background-image: url(../../assets/images/fruits/fruits2-tab-1x.png);
+    background-size: 768px 1024px;
 
     @media (min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
-      background-size: 768px 1024px;
       background-image: url(../../assets/images/fruits/fruits2-tab-2x.png);
     }
   }
 
   @media screen and (min-width: 1280px) {
-    background-image: url(../../assets/images/fruits/fruits-comp-1x.png);
+    background-image: url(../../assets/images/fruits/fruts-comp-1x.png),
+      url(../../assets/images/fruits/backgrond.png);
+    background-size: 980px 850px, auto 100%;
 
     @media (min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
       background-size: 980px 850px;
-      background-image: url(../../assets/images/fruits/fruits-comp-2x.png);
+      background-image: url(../../assets/images/fruits/fruts-comp-2x.png);
     }
   }
 }
+.secondaryBcg {
+  min-height: 100vh;
+  @media screen and (min-width: 1280px) {
+    background-image: linear-gradient(
+      to left,
+      var(--secondary-bg-color) 0px,
+      var(--secondary-bg-color) 517px,
+
+      transparent 517px
+    );
+  }
+}
+// var(--secondary-bg-color);
