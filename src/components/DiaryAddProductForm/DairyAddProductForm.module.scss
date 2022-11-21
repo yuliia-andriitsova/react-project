@@ -70,6 +70,21 @@
   }
   @include tablet {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    max-height: 40px;
   }
+}
+
+.firstColumn {
+  @include tablet {
+      display: flex;
+      flex-direction: column;
+    }
+}
+
+.secondColumn {
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+    }
 }

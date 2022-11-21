@@ -62,6 +62,7 @@ export const ProductSelect = ({ onSelect }) => {
             type="button"
             style={{ display: 'block' }}
             onClick={() => handleSelectProduct(product)}
+            className={scss.productButton}
           >
             {product.title.ua}
           </button>

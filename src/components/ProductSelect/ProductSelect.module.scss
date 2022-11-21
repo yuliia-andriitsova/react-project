@@ -41,3 +41,10 @@
   letter-spacing: 0.04em;
   color: #9b9faa;
 }
+
+.productButton {
+  @include tablet {
+    max-width: 240px;
+    max-height: 25px;
+  }
+}
