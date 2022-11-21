@@ -41,6 +41,7 @@
   @include tablet {
     margin-top: 130px;
     width: 610px;
+    margin-top: 60px;
   }
   @include comp {
     margin-top: 147px;
@@ -68,6 +69,21 @@
     display: flex;
     flex-wrap: wrap;
   }
+  @include tablet {
+    display: flex;
+    flex-direction: column;
+    max-height: 40px;
+  }
+}
+
+.firstColumn {
+  @include tablet {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.secondColumn {
   @include tablet {
     display: flex;
     flex-direction: row;

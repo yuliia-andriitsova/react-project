@@ -11,6 +11,7 @@ export const DiaryAddProductForm = () => {
   const [productId, setProductId] = useState('');
   const [productWeight, setProductWeight] = useState('');
   const [startDate, setStartDate] = useState(new Date());
+  const [productValue, setProductValue] = useState('');
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -31,6 +32,8 @@ export const DiaryAddProductForm = () => {
         weight: productWeight,
       })
     );
+    setProductValue('');
+    setProductWeight('');
   };
 
   return (
@@ -38,29 +41,42 @@ export const DiaryAddProductForm = () => {
       <form onSubmit={handleSubmit} className={scss.form}>
         <Calendar startDate={startDate} setStartDate={setStartDate} />
         <div className={scss.inputAll}>
-          <ProductSelect onSelect={setProductId} />
-          <input
-            className={scss.weight}
-            type="number"
-            placeholder="Grams"
-            value={productWeight ?? ''}
-            onChange={handleChangeWeight}
-          />
+          <div className={scss.firstColumn}>
+            <ProductSelect
+              productValue={productValue}
+              setProductValue={setProductValue}
+              onSelect={setProductId}
+            />
+          </div>
 
-          <button type="submit" className={scss.btn}>
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 14 14"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+          <div className={scss.secondColumn}>
+            <input
+              className={scss.weight}
+              type="number"
+              placeholder="Grams"
+              value={productWeight ?? ''}
+              onChange={handleChangeWeight}
+            />
+
+            <button
+              type="submit"
+              disabled={!productId || !productWeight}
+              className={scss.btn}
             >
-              <path
-                d="M13.72 7.96003H7.96003V13.72H6.04003V7.96003H0.280029V6.04003H6.04003V0.280029H7.96003V6.04003H13.72V7.96003Z"
-                fill="white"
-              />
-            </svg>
-          </button>
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 14 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13.72 7.96003H7.96003V13.72H6.04003V7.96003H0.280029V6.04003H6.04003V0.280029H7.96003V6.04003H13.72V7.96003Z"
+                  fill="white"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       </form>
     </>

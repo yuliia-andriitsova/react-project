@@ -1,23 +1,44 @@
+@import '../../sass/_mixin.scss';
+
 .loginWrap {
-  padding-left: 20px;
-  padding-right: 20px;
+  @include mob {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 40px;
+  }
+  @include tablet {
+    padding-top: 160px;
+  }
 }
 
 .loginTitle {
-  font-family: var(----primary-font);
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1.21;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--orange);
-  margin-bottom: 60px;
+  @include mob {
+    font-family: var(----primary-font);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.21;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 60px;
+    text-align: center;
+  }
+  @include tablet {
+    text-align: left;
+  }
 }
 
 .form {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
+  @include mob {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+  }
+
+  @include tablet {
+    align-items: flex-start;
+  }
 }
 
 .label {
@@ -36,31 +57,33 @@
 }
 
 .inputField {
-  font-family: var(--secondary-font);
-  width: 280px;
-  height: 20px;
-  border-top: 0px;
-  border-left: 0px;
-  border-right: 0px;
-  border-bottom: 1px solid var(--decoration-gray);
-}
+  @include mob {
+    font-family: var(--secondary-font);
+    width: 280px;
+    height: 20px;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 1px solid var(--decoration-gray);
+  }
 
-@media screen and (min-width: 768px) {
-  .inputField {
+  @include tablet {
     width: 240px;
   }
 }
 
 .btnWrap {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
+  @include mob {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
 
-@media screen and (min-width: 768px) {
-  .btnWrap {
+  @include tablet {
     flex-direction: row;
     gap: 32px;
+    margin-top: 20px;
   }
 }
 

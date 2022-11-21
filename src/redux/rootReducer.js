@@ -12,12 +12,12 @@ const persistRegistrConfig = {
   storage,
   blacklist: ['status'],
 };
-const persistUserConfig = {
-  key: 'user',
-  storage,
-  blacklist: ['status'],
-};
-const persistedUserReducer = persistReducer(persistUserConfig, userReduser);
+// const persistUserConfig = {
+//   key: 'user',
+//   storage,
+//   blacklist: ['status'],
+// };
+// const persistedUserReducer = persistReducer(persistUserConfig, userReduser);
 const persistedRegistrReducer = persistReducer(
   persistRegistrConfig,
   authReducer
@@ -28,5 +28,5 @@ export const rootReducer = combineReducers({
   dailyRate: dailyRateReducer,
   day: dayReducer,
   daySummary: daySummaryReducer,
-  user: persistedUserReducer,
+  user: userReduser,
 });

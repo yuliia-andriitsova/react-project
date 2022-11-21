@@ -41,3 +41,34 @@
   letter-spacing: 0.04em;
   color: #9b9faa;
 }
+
+.productButton {
+  @include tablet {
+    max-width: 240px;
+    max-height: 25px;
+  }
+}
+.root {
+  position: relative;
+}
+.select {
+  background-color: hsl(0, 0%, 88%);
+  overflow: auto;
+  max-height: 350px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 50px;
+  z-index: 2;
+  button {
+    border: none;
+    background-color: transparent;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: unset;
+    text-align: left;
+    width: 100%;
+    display: block;
+  }
+}

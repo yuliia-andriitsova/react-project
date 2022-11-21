@@ -37,6 +37,11 @@ export default function DailyCaloriesForm({ onSubmit }) {
   const handleSubmit = event => {
     event.preventDefault();
     onSubmit({ weight, height, age, desiredWeight, bloodType });
+    setWeight('');
+    setHeight('');
+    setAge('');
+    setDesireWeight('');
+    setBloodType('');
   };
 
   return (
