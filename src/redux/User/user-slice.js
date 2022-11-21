@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { fetchDailyRatePrivate } from 'redux/Daily-rate/daily-rate-operations';
 import { StatusForAll } from 'redux/Status';
 import { getUserOperation } from './user-operation';
 
@@ -34,6 +35,11 @@ const userSlice = createSlice({
     [getUserOperation.rejected](state) {
       state.status = StatusForAll.error;
     },
+    [fetchDailyRatePrivate.fulfilled](state, action) {
+      state.userData.dailyRate = action.payload.dailyRate;
+      state.userData.notAllowedProducts = action.payload.notAllowedProducts;
+    },
+
     // [refreshOperation.pending](state) {
     //   state.status = StatusForAll.loading;
     // },
