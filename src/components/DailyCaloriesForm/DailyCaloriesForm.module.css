@@ -203,6 +203,7 @@ input:focus:invalid {
   
   .input {
   margin-bottom: 32px;
+  padding-left: 118px;
   }
 
   .btn {
