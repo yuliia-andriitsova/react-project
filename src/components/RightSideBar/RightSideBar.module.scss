@@ -1,53 +1,94 @@
+@import '../../sass/_mixin.scss';
+
 .container {
-  display: flex;
+  @include mob {
+display: flex;
   flex-direction: column;
   gap: 40px;
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 43px;
   background-color: var(--secondary-bg-color);
-}
-
-@media screen and (min-width: 768px){
-  .container {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-evenly;
-      position: relative;
-      gap: 71px;
-      padding: 80px 32px;
-      background-image: url(../../assets/images/sideBar/leaves-1x-768.png);
-      background-repeat: no-repeat;
-      background-position: right bottom;
-    }
-        @media (min-device-pixel-ratio: 2),
-        (min-resolution: 192dpi),
-        (min-resolution: 2dppx) {
-          .container {
-            background-image: url(../../assets/images/sideBar/leaves-2x-768.png);
-          }
-        }
-}
-
-@media screen and (min-width: 1280px) {
-  .container {
-    width: 517px;
-    flex-direction: column;
-    gap: 60px;
-    padding-left: 106px;
-    padding-right: 123px;
-    padding-top: 292px;
-    background-image: url(../../assets/images/sideBar/leaves-1x-1280.png);
   }
-
-     @media (min-device-pixel-ratio: 2),
-     (min-resolution: 192dpi),
-     (min-resolution: 2dppx) {
-       .container {
-         background-image: url(../../assets/images/sideBar/leaves-2x-1280.png);
-       }
-     }
+    @include tablet {
+      display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        position: relative;
+        gap: 71px;
+        padding: 80px 32px;
+        background-image: url(../../assets/images/sideBar/leaves-1x-768.png);
+        background-repeat: no-repeat;
+        background-position: right bottom;
+        margin-top: 60px;
+        @media (min-device-pixel-ratio: 2),
+          (min-resolution: 192dpi),
+          (min-resolution: 2dppx) {
+            .container {
+              background-image: url(../../assets/images/sideBar/leaves-2x-768.png);
+            }
+          }
+    }
+    @include comp {
+      width: 517px;
+        flex-direction: column;
+        gap: 60px;
+        padding-left: 106px;
+        padding-right: 123px;
+        padding-top: 292px;
+        margin: 0;
+        background-image: url(../../assets/images/sideBar/leaves-1x-1280.png);
+        @media (min-device-pixel-ratio: 2),
+          (min-resolution: 192dpi),
+          (min-resolution: 2dppx) {
+            .container {
+              background-image: url(../../assets/images/sideBar/leaves-2x-1280.png);
+            }
+          }
+    }
+ 
 }
+
+// @media screen and (min-width: 768px){
+//   .container {
+//       display: flex;
+//       flex-direction: row;
+//       justify-content: space-evenly;
+//       position: relative;
+//       gap: 71px;
+//       padding: 80px 32px;
+//       background-image: url(../../assets/images/sideBar/leaves-1x-768.png);
+//       background-repeat: no-repeat;
+//       background-position: right bottom;
+//     }
+//         @media (min-device-pixel-ratio: 2),
+//         (min-resolution: 192dpi),
+//         (min-resolution: 2dppx) {
+//           .container {
+//             background-image: url(../../assets/images/sideBar/leaves-2x-768.png);
+//           }
+//         }
+// }
+
+// @media screen and (min-width: 1280px) {
+//   .container {
+//     width: 517px;
+//     flex-direction: column;
+//     gap: 60px;
+//     padding-left: 106px;
+//     padding-right: 123px;
+//     padding-top: 292px;
+//     background-image: url(../../assets/images/sideBar/leaves-1x-1280.png);
+//   }
+
+//      @media (min-device-pixel-ratio: 2),
+//      (min-resolution: 192dpi),
+//      (min-resolution: 2dppx) {
+//        .container {
+//          background-image: url(../../assets/images/sideBar/leaves-2x-1280.png);
+//        }
+//      }
+// }
 
 .rightSideBarTitle {
   font-family: var(----secondary-font);
