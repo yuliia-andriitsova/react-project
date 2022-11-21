@@ -1,6 +1,7 @@
 .DailyCaloriesForm {
   display: block;
   width: 608px;
+  padding-top: 147px;
 }
 
 .title {
@@ -13,7 +14,7 @@
   color: var(--black);
 
   margin-bottom: 68px;
-  margin-top: 147px;
+
 }
 
 .form {
@@ -60,7 +61,7 @@
   margin-bottom: 8px;
   padding-bottom: 15px;
   border-bottom: 1px solid var(--decoration-gray);
-} 
+}
 
 .input {
   width: 240px;
@@ -100,7 +101,7 @@ input:focus:invalid {
   margin-right: 28px;
 }
 
-.inputRadio:checked + label {
+.inputRadio:checked+label {
   color: var(--orange);
 }
 
@@ -187,23 +188,23 @@ input:focus:invalid {
   }
 
   .label {
-   position: absolute;
-   top: -5px;
-   left: 0;
+    position: absolute;
+    top: -5px;
+    left: 0;
   }
 
   .labelLastChild {
-  margin-top: 0;
-  margin-bottom: 0;
-  position: absolute;
-  top: -20px;
-  left: 0;
-  border-bottom: 1px solid transparent;
+    margin-top: 0;
+    margin-bottom: 0;
+    position: absolute;
+    top: -20px;
+    left: 0;
+    border-bottom: 1px solid transparent;
   }
-  
+
   .input {
-  margin-bottom: 32px;
-  padding-left: 118px;
+    margin-bottom: 32px;
+    padding-left: 118px;
   }
 
   .btn {

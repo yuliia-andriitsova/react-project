@@ -4,12 +4,28 @@
   display: flex;
   align-items: center;
 
-  @media screen and (min-width: 1280px) {
+  @include mob {
+    gap: 36px;
+    position: absolute;
+    left: 26%;
+    top: 140px;
+    flex-direction: column;
+  }
+  @include tablet {
+    gap: 40px;
+    position: absolute;
+    left: 47%;
+    top: 180px;
+  }
+  @include comp {
+    position: static;
     height: 32px;
     border-left: 2px solid #e0e0e0;
     padding-left: 20px;
     margin-left: 20px;
     margin-top: 40px;
+    flex-direction: row;
+    gap: 0;
   }
 }
 
@@ -44,3 +60,26 @@
 .second:focus {
   color: #212121;
 }
+// .navigationBackColor {
+//   @include mob {
+//     // display: block;
+//     position: absolute;
+//     width: 320px;
+//     height: 488px;
+//     left: 0px;
+//     top: 80px;
+//     background-color: #264061;
+//   }
+//   @include tablet {
+//     width: 768px;
+//     height: 944px;
+//     top: 69px;
+//   }
+//   @include comp {
+//     // display: none;
+//     background-color: transparent;
+//     position: static;
+//     width: 0;
+//     height: 0;
+//   }
+// }

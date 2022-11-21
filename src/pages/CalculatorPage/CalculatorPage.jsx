@@ -1,5 +1,5 @@
 import DailyCaloriesForm from 'components/DailyCaloriesForm/DailyCaloriesForm';
-import Header from 'components/Header/Header';
+
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import moment from 'moment';
@@ -23,7 +23,7 @@ export default function CalculatorPage() {
   return (
     <div className={scss.calculatorPage}>
       <div className={scss.containerPrivate}>
-        <Header />
+        {/* <Header /> */}
         <DailyCaloriesForm onSubmit={handleSubmit} />
       </div>
       <RightSideBar />

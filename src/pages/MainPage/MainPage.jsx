@@ -1,5 +1,5 @@
 import DailyCaloriesForm from 'components/DailyCaloriesForm/DailyCaloriesForm';
-import Header from 'components/Header/Header';
+
 import Modal from 'components/Modal/Modal';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
@@ -17,7 +17,7 @@ export default function MainPage() {
 
   return (
     <div className={scss.container}>
-      <Header />
+      {/* <Header /> */}
       <DailyCaloriesForm onSubmit={handleSubmit} />
       {modalState && <Modal onClose={() => setModalState(false)} />}
     </div>
