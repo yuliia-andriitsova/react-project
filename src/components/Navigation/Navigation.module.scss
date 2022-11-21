@@ -28,19 +28,6 @@
   composes: navlink;
   color: #9b9faa;
   margin-right: 16px;
-  @include mob {
-    position: absolute;
-  }
-  @include tablet {
-    background-color: #264061;
-    width: 768px;
-    height: 944px;
-    left: 0;
-    top: 69px;
-  }
-  @include comp {
-    position: static;
-  }
 }
 
 .second {
