@@ -1,51 +1,53 @@
 .container {
   width: 100%;
-  height: 850px;
-  background-repeat: no-repeat;
-  background-position: 100% 100%;
-  background-size: 980px 850px;
-  background-image: url(../../assets/images/fruits/fruits-comp-1x.png);
-};
-
-@media screen and (min-width: 200px) and (max-width: 767px) {
-  .container {
-    padding-top: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
-    background-image: none;
-  }
+  min-height: calc(100vh - 152px);
+  // width: 100%;
+  // height: 850px;
+  // background-repeat: no-repeat;
+  // background-position: 100% 100%;
+  // background-size: 980px 850px;
+  // background-image: url(../../assets/images/fruits/fruits-comp-1x.png);
 }
 
-@media screen and (min-width: 768px) {
-  .container {
-    background-image: url(../../assets/images/fruits/fruits2-tab-1x.png);
-  }
+// @media screen and (min-width: 200px) and (max-width: 767px) {
+//   .container {
+//     padding-top: 20px;
+//     padding-left: 20px;
+//     padding-right: 20px;
+//     background-image: none;
+//   }
+// }
 
-  @media (min-device-pixel-ratio: 2),
-  (min-resolution: 192dpi),
-  (min-resolution: 2dppx) {
-    .container {
-      background-size: 768px 1024px;
-      background-image: url(../../assets/images/fruits/fruits2-tab-2x.png);
-    }
-  }
-};
+// @media screen and (min-width: 768px) {
+//   .container {
+//     background-image: url(../../assets/images/fruits/fruits2-tab-1x.png);
+//   }
 
-@media screen and (min-width: 1280px) {
-  .container {
-    background-image: url(../../assets/images/fruits/fruits-comp-1x.png);
-  }
+//   @media (min-device-pixel-ratio: 2),
+//   (min-resolution: 192dpi),
+//   (min-resolution: 2dppx) {
+//     .container {
+//       background-size: 768px 1024px;
+//       background-image: url(../../assets/images/fruits/fruits2-tab-2x.png);
+//     }
+//   }
+// };
 
-  @media (min-device-pixel-ratio: 2),
-  (min-resolution: 192dpi),
-  (min-resolution: 2dppx) {
-    .container {
-      padding-top: 80px;
-      padding-left: 16px;
-      background-size: 980px 850px;
-      background-image: url(../../assets/images/fruits/fruits-comp-2x.png);
-    }
-  }
+// @media screen and (min-width: 1280px) {
+//   .container {
+//     background-image: url(../../assets/images/fruits/fruits-comp-1x.png);
+//   }
 
-  ;
-}
+//   @media (min-device-pixel-ratio: 2),
+//   (min-resolution: 192dpi),
+//   (min-resolution: 2dppx) {
+//     .container {
+//       padding-top: 80px;
+//       padding-left: 16px;
+//       background-size: 980px 850px;
+//       background-image: url(../../assets/images/fruits/fruits-comp-2x.png);
+//     }
+//   }
+
+//   ;
+// }

@@ -10,6 +10,7 @@ import { getUserOperation } from 'redux/User/user-operation';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import PublicRoute from './PublicRoute/PublicRoute';
 import scss from './App/App.module.scss';
+import Header from './Header/Header';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -19,7 +20,8 @@ export const App = () => {
   }, [dispatch]);
 
   return (
-    <div>
+    <div className={scss.backgraundImg}>
+      <Header />
       <Routes>
         <Route path="/" element={<PublicRoute />}>
           <Route path="/" element={<MainPage />} />

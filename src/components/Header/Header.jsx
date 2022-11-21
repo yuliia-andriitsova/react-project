@@ -10,10 +10,10 @@ export default function Header() {
   const token = useSelector(getToken);
 
   return (
-    <div className={styles.header}>
+    <header className={styles.header}>
       <Logo />
       <Navigation />
       {token && <UserInfo />}
-    </div>
+    </header>
   );
 }

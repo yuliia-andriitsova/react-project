@@ -17,9 +17,9 @@ function UserInfo() {
       >
         Exit
       </button>
-      <picture>
-        <img src={burgerMenu} alt="burgerMenu" className={s.burgerMenu} />
-      </picture>
+      <button className={s.burgerMenu}>
+        <img src={burgerMenu} alt="burgerMenu" />
+      </button>
     </div>
   );
 }
