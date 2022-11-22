@@ -13,7 +13,7 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <Logo />
-      {/* <Navigation /> */}
+      {token && <Navigation />}
       {token ? (
         <UserInfo />
       ) : (
