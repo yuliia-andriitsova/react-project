@@ -13,13 +13,13 @@ export default function MainPage() {
   const handleSubmit = data => {
     dispatch(fetchDailyRate(data));
     setModalState(true);
+    localStorage.setItem('userData', JSON.stringify(data));
   };
 
   return (
-    <div className={scss.container}>
-      {/* <Header /> */}
+    <section className={scss.container}>
       <DailyCaloriesForm onSubmit={handleSubmit} />
       {modalState && <Modal onClose={() => setModalState(false)} />}
-    </div>
+    </section>
   );
 }

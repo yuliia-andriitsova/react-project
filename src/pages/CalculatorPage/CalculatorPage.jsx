@@ -22,11 +22,12 @@ export default function CalculatorPage() {
 
   return (
     <div className={scss.calculatorPage}>
-      <div className={scss.containerPrivate}>
-        {/* <Header /> */}
+      <section className={scss.containerPrivate}>
         <DailyCaloriesForm onSubmit={handleSubmit} />
-      </div>
-      <RightSideBar />
+      </section>
+      <section>
+        <RightSideBar />
+      </section>
     </div>
   );
 }

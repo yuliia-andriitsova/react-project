@@ -41,8 +41,13 @@ const userSlice = createSlice({
       state.userData.notAllowedProducts = action.payload.notAllowedProducts;
     },
     [loginUserOperation.fulfilled](state, action) {
-      state.userData.notAllowedProducts =
-        action.payload.user.userData.notAllowedProducts;
+      console.log(action.payload);
+      state.email = action.payload.user.email;
+      state.id = action.payload.user.id;
+      state.userData = action.payload.user.userData;
+      state.username = action.payload.user.username;
+      // state.userData.notAllowedProducts =
+      //   action.payload.user.userData.notAllowedProducts;
     },
 
     // [refreshOperation.pending](state) {

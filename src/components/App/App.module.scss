@@ -57,7 +57,13 @@
   }
 }
 
+.body {
+display: flex;
+flex-direction: column;
+}
+
 .backgraundImg {
+  composes: body;
   min-height: 100vh;
   background-repeat: no-repeat;
   background-position: top right, bottom right;
@@ -95,6 +101,7 @@
   }
 }
 .secondaryBcg {
+  composes: body;
   min-height: 100vh;
   @media screen and (min-width: 1280px) {
     background-image: linear-gradient(
@@ -106,4 +113,7 @@
     );
   }
 }
-// var(--secondary-bg-color);
+
+.main {
+  flex-grow: 1;
+}
