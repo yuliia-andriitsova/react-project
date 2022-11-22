@@ -3,6 +3,7 @@ import Navigation from 'components/Navigation/Navigation';
 import UserInfo from 'components/UserInfo/UserInfo';
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import { getToken } from 'redux/Auth/auth-selectors';
 import styles from './Header.module.scss';
 
@@ -13,7 +14,18 @@ export default function Header() {
     <header className={styles.header}>
       <Logo />
       <Navigation />
-      {token && <UserInfo />}
+      {token ? (
+        <UserInfo />
+      ) : (
+        <div>
+          <NavLink to="/signin" className={styles.item}>
+            Sign in
+          </NavLink>
+          <NavLink to="/registration" className={styles.item}>
+            Registration
+          </NavLink>
+        </div>
+      )}
     </header>
   );
 }

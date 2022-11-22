@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { loginUserOperation } from 'redux/Auth/auth-operations';
 import { fetchDailyRatePrivate } from 'redux/Daily-rate/daily-rate-operations';
 import { StatusForAll } from 'redux/Status';
 import { getUserOperation } from './user-operation';
@@ -38,6 +39,10 @@ const userSlice = createSlice({
     [fetchDailyRatePrivate.fulfilled](state, action) {
       state.userData.dailyRate = action.payload.dailyRate;
       state.userData.notAllowedProducts = action.payload.notAllowedProducts;
+    },
+    [loginUserOperation.fulfilled](state, action) {
+      state.userData.notAllowedProducts =
+        action.payload.user.userData.notAllowedProducts;
     },
 
     // [refreshOperation.pending](state) {

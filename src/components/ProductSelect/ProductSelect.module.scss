@@ -1,9 +1,8 @@
 @import '../../sass/_mixin.scss';
 .product {
   @include mob {
-    height: 50px;
-    width: 240px;
-    margin-right: 48px;
+    height: 24px;
+    width: 285px;
     outline: 0;
     border: transparent;
     border-bottom: 1px solid #e0e0e0;
@@ -15,7 +14,6 @@
     margin-right: 22px;
     outline: 0;
     border: transparent;
-    margin-bottom: 60px;
     border-bottom: 1px solid #e0e0e0;
     text-align: left;
   }
@@ -25,7 +23,6 @@
     margin-right: 48px;
     outline: 0;
     border: transparent;
-    margin-bottom: 60px;
     border-bottom: 1px solid #e0e0e0;
     text-align: left;
   }

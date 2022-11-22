@@ -6,8 +6,9 @@ import { setProductsData } from 'redux/Product-search/product-search-operations'
 import { fetchDaySummary } from 'redux/Day/day-operations';
 import moment from 'moment';
 import scss from './DairyAddProductForm.module.scss';
+import classNames from 'classnames';
 
-export const DiaryAddProductForm = () => {
+export const DiaryAddProductForm = ({ setIsOpen, isOpen }) => {
   const [productId, setProductId] = useState('');
   const [productWeight, setProductWeight] = useState('');
   const [startDate, setStartDate] = useState(new Date());
@@ -34,13 +35,14 @@ export const DiaryAddProductForm = () => {
     );
     setProductValue('');
     setProductWeight('');
+    setIsOpen(false);
   };
 
   return (
     <>
       <form onSubmit={handleSubmit} className={scss.form}>
         <Calendar startDate={startDate} setStartDate={setStartDate} />
-        <div className={scss.inputAll}>
+        <div className={classNames(scss.inputAll, isOpen && scss.isOpen)}>
           <div className={scss.firstColumn}>
             <ProductSelect
               productValue={productValue}
@@ -63,6 +65,7 @@ export const DiaryAddProductForm = () => {
               disabled={!productId || !productWeight}
               className={scss.btn}
             >
+              <span>Add</span>
               <svg
                 width="14"
                 height="14"
