@@ -44,7 +44,11 @@ export default function RightSideBar() {
       </div>
       <div>
         <h3 className={scss.rightSideBarTitle}>Food not recommended</h3>
-        <span className={scss.itemText}>Your diet will be displayed here</span>
+        {!notAllowedProducts && (
+          <span className={scss.itemText}>
+            Your diet will be displayed here
+          </span>
+        )}
         <ul className={scss.notAllowedProductsList}>
           {notAllowedProducts.slice(0, 10).map(product => (
             <li className={scss.itemText} key={product}>
