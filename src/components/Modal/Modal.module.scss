@@ -138,7 +138,17 @@
 }
 
 .startLosingBtn {
-  : btn;
+  font-family: var(--secondary-font);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: 0.04em;
+  
+    background-color: var(--orange);
+    color: var(--white-text);
+    box-shadow: 0px 4px 10px rgba(252, 132, 45, 0.5);
+    border-radius: 30px;
+    border-color: transparent;
   width: 210px;
   padding: 13px 25px;
   text-decoration: none;
@@ -165,8 +175,22 @@
 }
 
 .ModalCalories {
-  : ModalNumberCalories;
   font-size: 18px;
+    font-style: normal;
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 1.21;
+      text-align: center;
+      letter-spacing: 0.04em;
+      color: var(--blue);
+    
+      @include mob {
+        margin-top: 40px;
+      }
+    
+      @include tablet {
+        margin-top: 20px;
+      }
 }
 
 .ModalTitleSecond {
