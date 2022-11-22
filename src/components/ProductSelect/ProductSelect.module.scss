@@ -7,6 +7,8 @@
     border: transparent;
     border-bottom: 1px solid #e0e0e0;
     text-align: left;
+    margin-bottom: 32px;
+    margin-top: 80px;
   }
   @include tablet {
     height: 50px;
@@ -16,6 +18,9 @@
     border: transparent;
     border-bottom: 1px solid #e0e0e0;
     text-align: left;
+    margin-bottom: 0;
+    margin-top: 0;
+
   }
   @include comp {
     height: 50px;

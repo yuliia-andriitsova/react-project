@@ -6,8 +6,10 @@
     border: transparent;
     border-bottom: 1px solid #e0e0e0;
     width: 285px;
+    margin-bottom: 60px;
   }
   @include tablet {
+    margin-bottom: 0;
     margin-right: 87px;
     width: 107px;
   }
