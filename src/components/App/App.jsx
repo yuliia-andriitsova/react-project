@@ -27,22 +27,24 @@ export const App = () => {
   return (
     <div className={isMainbackground ? scss.backgraundImg : scss.secondaryBcg}>
       <Header />
-      <Routes>
-        <Route path="/" element={<PublicRoute />}>
-          <Route path="/" element={<MainPage />} />
-          <Route path="/signin" element={<LoginPage />} />
-          <Route path="/registration" element={<RegistrationPage />} />
-        </Route>
+      <main className={scss.main}>
+        <Routes>
+          <Route path="/" element={<PublicRoute />}>
+            <Route path="/" element={<MainPage />} />
+            <Route path="/signin" element={<LoginPage />} />
+            <Route path="/registration" element={<RegistrationPage />} />
+          </Route>
 
-        <Route
-          path="/"
-          element={<PrivateRoute />}
-          className={scss.containerPrivate}
-        >
-          <Route path="/dairy" element={<DairyPage />} />
-          <Route path="/calculator" element={<CalculatorPage />} />
-        </Route>
-      </Routes>
+          <Route
+            path="/"
+            element={<PrivateRoute />}
+            className={scss.containerPrivate}
+          >
+            <Route path="/dairy" element={<DairyPage />} />
+            <Route path="/calculator" element={<CalculatorPage />} />
+          </Route>
+        </Routes>
+      </main>
     </div>
   );
 };

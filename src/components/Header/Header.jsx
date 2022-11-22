@@ -13,18 +13,18 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <Logo />
-      <Navigation />
+      {/* <Navigation /> */}
       {token ? (
         <UserInfo />
       ) : (
-        <div>
+        <nav className={styles.navigation}>
           <NavLink to="/signin" className={styles.item}>
             Sign in
           </NavLink>
           <NavLink to="/registration" className={styles.item}>
             Registration
           </NavLink>
-        </div>
+        </nav>
       )}
     </header>
   );

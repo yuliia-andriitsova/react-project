@@ -3,8 +3,8 @@ import scss from './RegistrationPage.module.scss';
 
 export default function RegistrationPage() {
   return (
-    <div className={scss.container}>
+    <section className={scss.container}>
       <RegistrationForm />
-    </div>
+    </section>
   );
 }

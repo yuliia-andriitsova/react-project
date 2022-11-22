@@ -2,14 +2,26 @@ import { DiaryAddProductForm } from 'components/DiaryAddProductForm/DiaryAddProd
 import RightSideBar from 'components/RightSideBar/RightSideBar';
 import DiaryProductsList from 'components/DiaryProductsList/DiaryProductsList';
 import scss from './DairyPage.module.scss';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Subheader } from 'components/Subheader/Subheader';
 import { useNavigate } from 'react-router-dom';
+import { fetchDailyRatePrivate } from 'redux/Daily-rate/daily-rate-operations';
+import { useDispatch } from 'react-redux';
 
 export default function DairyPage() {
   const navigate = useNavigate();
 
   const [isOpen, setIsOpen] = useState(false);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const userData = JSON.parse(localStorage.getItem('userData'));
+    if (userData) {
+      dispatch(fetchDailyRatePrivate(userData));
+      localStorage.removeItem('userData');
+    }
+  }, []);
+
   const handleBack = () => {
     if (isOpen) {
       setIsOpen(false);
@@ -19,7 +31,7 @@ export default function DairyPage() {
   };
   return (
     <div className={scss.dairyPage}>
-      <div className={scss.containerPrivate}>
+      <section className={scss.containerPrivate}>
         <Subheader onBack={handleBack} />
         <DiaryAddProductForm setIsOpen={setIsOpen} isOpen={isOpen} />
         <DiaryProductsList />
@@ -41,8 +53,10 @@ export default function DairyPage() {
             />
           </svg>
         </button>
-      </div>
-      <RightSideBar />
+      </section>
+      <section>
+        <RightSideBar />
+      </section>
     </div>
   );
 }

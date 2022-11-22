@@ -19,7 +19,7 @@ function UserInfo() {
   const username = useSelector(state => state.user?.username);
   return (
     <div className={s.UserInfo}>
-      <p className={s.UserInfoText}>Hello: {username}</p>
+      <p className={s.UserInfoText}>{username}</p>
       <button
         type="button"
         onClick={() => dispatch(logoutUserOperation())}

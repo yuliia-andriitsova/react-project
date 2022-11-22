@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { fetchDailyRatePrivate } from 'redux/Daily-rate/daily-rate-operations';
 import { getUserOperation } from 'redux/User/user-operation';
 import { postLogin, postLogout } from 'services/API';
 
