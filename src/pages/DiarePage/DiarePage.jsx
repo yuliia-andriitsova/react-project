@@ -20,7 +20,7 @@ export default function DairyPage() {
       dispatch(fetchDailyRatePrivate(userData));
       localStorage.removeItem('userData');
     }
-  }, []);
+  }, [dispatch]);
 
   const handleBack = () => {
     if (isOpen) {

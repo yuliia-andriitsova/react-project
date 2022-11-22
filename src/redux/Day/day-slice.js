@@ -1,6 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { useSelector } from 'react-redux';
-import { selectDailyRate } from 'redux/Daily-rate/daily-rate-selectors';
 import { fetchDaySummary } from './day-operations';
 
 // const dailyRate = useSelector(selectDailyRate);
