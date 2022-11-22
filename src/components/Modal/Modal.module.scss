@@ -138,7 +138,7 @@
 }
 
 .startLosingBtn {
-  composes: btn;
+  : btn;
   width: 210px;
   padding: 13px 25px;
   text-decoration: none;
@@ -165,7 +165,7 @@
 }
 
 .ModalCalories {
-  composes: ModalNumberCalories;
+  : ModalNumberCalories;
   font-size: 18px;
 }
 
