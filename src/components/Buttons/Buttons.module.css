@@ -18,19 +18,46 @@
 }
 
 .startLosingBtn {
-  composes: btn;
+  font-family: var(--secondary-font);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: 0.04em;
+    background-color: var(--orange);
+    color: var(--white-text);
+    border-radius: 30px;
+    border-color: transparent;
+    cursor: pointer;
   width: 210px;
   padding: 13px 25px;
 }
 
 .loginBtn {
-  composes: btn;
+  font-family: var(--secondary-font);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: 0.04em;
+    background-color: var(--orange);
+    color: var(--white-text);
+    border-radius: 30px;
+    border-color: transparent;
+    cursor: pointer;
   width: 181px;
   padding: 13px 51px;
 }
 
 .registerBtn {
-  composes: btn;
+  font-family: var(--secondary-font);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: 0.04em;
+    background-color: var(--orange);
+    color: var(--white-text);
+    border-radius: 30px;
+    border-color: transparent;
+    cursor: pointer;
   background-color: var(--white-text);
   color: var(--orange);
   border: 2px solid #fc842d;

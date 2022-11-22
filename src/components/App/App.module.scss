@@ -63,7 +63,8 @@ flex-direction: column;
 }
 
 .backgraundImg {
-  composes: body;
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
   background-repeat: no-repeat;
   background-position: top right, bottom right;
@@ -101,7 +102,8 @@ flex-direction: column;
   }
 }
 .secondaryBcg {
-  composes: body;
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
   @media screen and (min-width: 1280px) {
     background-image: linear-gradient(

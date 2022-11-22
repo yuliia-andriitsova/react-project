@@ -167,8 +167,25 @@ input:focus:invalid {
   transition: all 250ms linear;
 }
 
+.startLosingBtn:hover,
+.startLosingBtn:focus {
+  box-shadow: 0px 4px 10px rgba(252, 132, 45, 0.5);
+  transition: all 250ms linear;
+}
+
 .startLosingBtn {
-  composes: btn;
+  font-family: var(--secondary-font);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: 0.04em;
+    background-color: var(--orange);
+    color: var(--white-text);
+    border-radius: 30px;
+    border-color: transparent;
+    cursor: pointer;
+    margin-left: 339px;
+    margin-top: 20px;
   width: 210px;
   padding: 13px 25px;
 }

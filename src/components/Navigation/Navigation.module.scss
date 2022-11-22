@@ -42,13 +42,27 @@
 }
 
 .first {
-  composes: navlink;
+    font-family: 'Raleway';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 0.92;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      text-decoration: none;
   color: #9b9faa;
   margin-right: 16px;
 }
 
 .second {
-  composes: navlink;
+    font-family: 'Raleway';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 0.92;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      text-decoration: none;
   color: #9b9faa;
   margin-right: 16px;
 }
