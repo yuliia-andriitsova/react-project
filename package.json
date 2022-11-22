@@ -37,18 +37,7 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ],
-    "rules": {
-        "property-no-unknown": [
-            false,
-            {
-                "ignoreProperties": [
-                    "composes",
-                    "compose-with"
-                ]
-            }
-        ]
-    }
+    ]
   },
   "browserslist": {
     "production": [
