@@ -4,13 +4,46 @@
     position: fixed;
     top: 80px;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: var(--secondary-bg-color);
   }
   @include tablet {
     display: none;
   }
+}
+
+.arrow{
+  border: none;
+  background-color: transparent;
+}
+.nameWrap {
+  display: flex;
+  padding-right: 20px;
+}
+
+.userName {
+  font-family: var(--primary-font);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 13px;
+    letter-spacing: 0.04em;
+    color: var(--black);
+    border-right: 1px solid var(--decoration-gray);
+    padding: 10px 16px 10px 0px;
+}
+
+.exitBtn {
+  border: none;
+  background-color: transparent;
+  font-family: var(--primary-font);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 13px;
+  letter-spacing: 0.04em;
+  color: var(--text-gray);
+  padding: 0 0 0 16px;
 }

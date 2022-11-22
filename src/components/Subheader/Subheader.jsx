@@ -7,7 +7,7 @@ export const Subheader = ({ onBack }) => {
   return (
     <div className={scss.Subheader}>
       {onBack ? (
-        <button type="button" onClick={onBack}>
+        <button className={scss.arrow} type="button" onClick={onBack}>
           <svg
             width="15"
             height="9"
@@ -26,9 +26,9 @@ export const Subheader = ({ onBack }) => {
         <div />
       )}
       {username && (
-        <div>
-          <p>{username}</p>
-          <button type="button" onClick={() => dispatch(logoutUserOperation())}>
+        <div className={scss.nameWrap}>
+          <p className={scss.userName}>{username}</p>
+          <button className={scss.exitBtn} type="button" onClick={() => dispatch(logoutUserOperation())}>
             Exit
           </button>
         </div>

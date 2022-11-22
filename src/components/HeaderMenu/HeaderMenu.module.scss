@@ -1,16 +1,20 @@
 @import '../../sass/_mixin.scss';
 .HeaderMenu {
-  padding-top: 100px;
+  padding-top: 60px;
   position: fixed;
   top: 68px;
   left: 0;
   width: 100vw;
-  height: calc(100vh - 68px);
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #264061;
   z-index: 20;
+  @include tablet {
+    padding-top: 100px;
+  }
+
   @include comp {
     display: none;
   }
@@ -19,10 +23,23 @@
   font-family: 'Raleway';
   font-style: normal;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 0.92;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   text-decoration: none;
   color: var(--text-gray);
+
+  @include tablet {
+    font-size: 24px;
+  }
+}
+
+.item:not(:last-child) {
+  margin-bottom: 37px;
+}
+
+.item:hover,
+.item:focus {
+  color: var(--white-text);
 }
