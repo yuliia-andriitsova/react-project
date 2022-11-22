@@ -20,6 +20,7 @@
 }
 
 .UserBtn {
+  display: none;
   border-color: transparent;
   background-color: transparent;
   height: 32px;
@@ -34,9 +35,13 @@
   line-height: 0.92;
   letter-spacing: 0.04em;
   color: #9b9faa;
+  @include tablet {
+    display: block;
+  }
 }
 
 .UserInfoText {
+  display: none;
   font-family: 'Raleway';
   font-style: normal;
   font-weight: 700;
@@ -45,6 +50,9 @@
   letter-spacing: 0.04em;
   text-decoration: none;
   text-align: right;
+  @include tablet {
+    display: block;
+  }
 }
 
 .burgerMenu {

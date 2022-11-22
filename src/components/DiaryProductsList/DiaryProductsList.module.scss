@@ -55,6 +55,9 @@
 }
 
 .item:nth-child(1) {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   @include mob {
     margin-bottom: 16px;
     border-bottom: 1px solid #e0e0e0;

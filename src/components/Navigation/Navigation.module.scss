@@ -60,26 +60,11 @@
 .second:focus {
   color: #212121;
 }
-// .navigationBackColor {
-//   @include mob {
-//     // display: block;
-//     position: absolute;
-//     width: 320px;
-//     height: 488px;
-//     left: 0px;
-//     top: 80px;
-//     background-color: #264061;
-//   }
-//   @include tablet {
-//     width: 768px;
-//     height: 944px;
-//     top: 69px;
-//   }
-//   @include comp {
-//     // display: none;
-//     background-color: transparent;
-//     position: static;
-//     width: 0;
-//     height: 0;
-//   }
-// }
+.navigation,
+.navigationBackColor {
+  display: none;
+
+  @include comp {
+    display: block;
+  }
+}
