@@ -28,7 +28,6 @@ const daySlice = createSlice({
       state.status = StatusForAll.loading;
     },
     [setProductsData.fulfilled](state, action) {
-      console.log(action.payload);
       state.status = StatusForAll.success;
       state.id = action.payload.day?.id || action.payload.newDay?.id;
       state.eatenProducts =
@@ -47,7 +46,6 @@ const daySlice = createSlice({
     },
     [fetchDaySummary.fulfilled](state, action) {
       // if (action.payload.eatenProducts) {
-      console.log(action.payload);
       state.eatenProducts = action.payload?.eatenProducts || [];
       state.id = action.payload?.id || '';
       state.date =

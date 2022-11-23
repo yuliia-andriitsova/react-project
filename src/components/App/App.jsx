@@ -14,7 +14,6 @@ import Header from '../Header/Header';
 
 export const App = () => {
   const location = useLocation();
-  console.log(location);
   const dispatch = useDispatch();
   const isMainbackground =
     location.pathname === '/' ||
