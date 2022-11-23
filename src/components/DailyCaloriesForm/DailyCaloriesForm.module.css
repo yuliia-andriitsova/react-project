@@ -184,7 +184,6 @@ input:focus:invalid {
     border-radius: 30px;
     border-color: transparent;
     cursor: pointer;
-    margin-left: 339px;
     margin-top: 20px;
   width: 210px;
   padding: 13px 25px;
@@ -255,4 +254,7 @@ input:focus:invalid {
     padding-left: 16px;
     padding-top: 147px;
   }
+    .startLosingBtn{
+    margin-left: 339px;
+    } 
 }
